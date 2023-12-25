@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  labels:
+    app: one
+  name: one-service
+  namespace: default
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 34.118.227.5
+  clusterIPs:
+    - 34.118.227.5
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: https # Name for the HTTPS port
+      port: 443
+      protocol: TCP
+      targetPort: 443
+    - name: http # Name for the HTTP port (if needed)
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: one
+  sessionAffinity: None
+  type: LoadBalancer

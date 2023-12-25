@@ -1,0 +1,20 @@
+{
+  "name": "listing-images",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.468.0",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0",
+    "formdata-node": "^6.0.3",
+    "jsdom": "^23.0.1",
+    "puppeteer": "^21.6.0"
+  },
+  "description": ""
+}

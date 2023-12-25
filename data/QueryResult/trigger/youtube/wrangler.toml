@@ -1,0 +1,8 @@
+name = "youtube"
+main = "src/index.js"
+compatibility_date = "2023-12-06"
+
+[vars]
+GOOGLE_API_KEY='AIzaSyAPNHRLdYZe_i_9G8YTjnnrTqGAPs5ofh0'
+UPSTASH_REDIS_REST_URL='https://usw1-curious-swan-33560.upstash.io'
+UPSTASH_REDIS_REST_TOKEN='AYMYACQgNGJmYzQ5ZWEtZjI3OS00NDVlLWJmNTItMmNiOWM3OWZmY2E5ZTIwMzA0OGUwYjM1NDVlZDkwZDFhNzIxODhjNGNjOTQ='

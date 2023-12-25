@@ -1,0 +1,19 @@
+NAME                       READY   STATUS    RESTARTS      AGE
+pod/one-6c84667655-5fch5   1/1     Running   0             9m13s
+pod/one-6c84667655-gjzvs   1/1     Running   3 (11m ago)   19m
+pod/one-6c84667655-qhkqc   1/1     Running   0             13m
+pod/one-6c84667655-r9nsb   1/1     Running   0             10m
+pod/one-6c84667655-tjw7l   1/1     Running   0             14m
+
+NAME                  TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)                      AGE
+service/kubernetes    ClusterIP      34.118.224.1   <none>           443/TCP                      79m
+service/one-service   LoadBalancer   34.118.227.5   35.235.101.162   443:32469/TCP,80:30804/TCP   74m
+
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/one   5/5     5            5           19m
+
+NAME                             DESIRED   CURRENT   READY   AGE
+replicaset.apps/one-6c84667655   5         5         5       19m
+
+NAME                                               REFERENCE        TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/one-hpa-8fpf   Deployment/one   95%/80%   1         5         5          75m

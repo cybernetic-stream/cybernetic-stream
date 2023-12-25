@@ -1,0 +1,186 @@
+{
+	"indexes": [
+		{
+			"collectionGroup": "FleetSourcingIntent",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "status",
+					"order": "ASCENDING"
+				},
+				{
+					"fieldPath": "d",
+					"order": "ASCENDING"
+				},
+				{
+					"fieldPath": "a",
+					"order": "ASCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "FleetSourcingIntent",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "status",
+					"order": "ASCENDING"
+				},
+				{
+					"fieldPath": "date",
+					"order": "ASCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "Index",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "created",
+					"order": "DESCENDING"
+				},
+				{
+					"fieldPath": "name",
+					"order": "ASCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "queryResult",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "query",
+					"order": "ASCENDING"
+				},
+				{
+					"fieldPath": "index",
+					"order": "ASCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "QueryResult",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "created",
+					"order": "DESCENDING"
+				},
+				{
+					"fieldPath": "index",
+					"order": "ASCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "QueryResult",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "query",
+					"order": "ASCENDING"
+				},
+				{
+					"fieldPath": "index",
+					"order": "ASCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "QueryResult",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "query",
+					"order": "ASCENDING"
+				},
+				{
+					"fieldPath": "source",
+					"order": "ASCENDING"
+				},
+				{
+					"fieldPath": "index",
+					"order": "ASCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "QueryResult",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "source",
+					"order": "ASCENDING"
+				},
+				{
+					"fieldPath": "created",
+					"order": "DESCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "QueryResultVideo",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "query",
+					"order": "ASCENDING"
+				},
+				{
+					"fieldPath": "index",
+					"order": "ASCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "Sublicense",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "created",
+					"order": "DESCENDING"
+				},
+				{
+					"fieldPath": "name",
+					"order": "ASCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "Sublicense",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "created",
+					"order": "DESCENDING"
+				},
+				{
+					"fieldPath": "value",
+					"order": "DESCENDING"
+				}
+			]
+		},
+		{
+			"collectionGroup": "Video",
+			"queryScope": "COLLECTION",
+			"fields": []
+		},
+		{
+			"collectionGroup": "Video",
+			"queryScope": "COLLECTION",
+			"fields": [
+				{
+					"fieldPath": "status",
+					"order": "ASCENDING"
+				},
+				{
+					"fieldPath": "created",
+					"order": "DESCENDING"
+				}
+			]
+		}
+	],
+	"fieldOverrides": []
+}

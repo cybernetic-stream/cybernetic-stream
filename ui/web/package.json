@@ -1,0 +1,40 @@
+{
+  "name": "cybernetic-stream",
+  "version": "1.0",
+  "private": true,
+  "scripts": {
+    "dev": "IS_DEV=true cp -f verifyLicense.js node_modules/@mui/x-license-pro/verifyLicense/verifyLicense.js; cp -f Shortcut.js node_modules/video-react/lib/components/Shortcut.js;  next dev",
+    "build": "IS_DEV=false cp -f verifyLicense.js node_modules/@mui/x-license-pro/verifyLicense/verifyLicense.js; cp -f Shortcut.js node_modules/video-react/lib/components/Shortcut.js; next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.1",
+    "@mui/lab": "^5.0.0-alpha.157",
+    "@mui/material": "^5.15.1",
+    "@mui/x-data-grid-premium": "^6.18.5",
+    "eslint": "8.56.0",
+    "ffmpeg.js": "^4.2.9003",
+    "firebase": "^10.7.1",
+    "firebase-admin": "^12.0.0",
+    "hls.js": "^1.4.14",
+    "install": "^0.13.0",
+    "lodash": "^4.17.21",
+    "next": "^14.0.4",
+    "npm": "^10.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-plaid-link": "^3.5.1",
+    "react-player": "^2.14.1",
+    "video-react": "^0.16.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "eslint-config-next": "^14.0.4",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.1",
+    "tailwindcss": "^3.4.0"
+  }
+}

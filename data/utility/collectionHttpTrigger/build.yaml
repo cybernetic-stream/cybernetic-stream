@@ -1,0 +1,36 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "us-west2-docker.pkg.dev/projectname-o/utility/collection-http-trigger",
+        ".",
+      ]
+    dir: "data/utility/collectionHttpTrigger"
+
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "push",
+        "us-west2-docker.pkg.dev/projectname-o/utility/collection-http-trigger",
+      ]
+
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      [
+        "run",
+        "deploy",
+        "collection-http-trigger",
+        "--image",
+        "us-west2-docker.pkg.dev/projectname-o/utility/collection-http-trigger",
+        "--region",
+        "us-west2",
+        "--platform",
+        "managed",
+        "--allow-unauthenticated",
+        "--update-secrets=GCP_SERVICE_ACCOUNT=GCP_SERVICE_ACCOUNT:latest",
+      ]
+
+images:
+  - "us-west2-docker.pkg.dev/projectname-o/utility/collection-http-trigger"
