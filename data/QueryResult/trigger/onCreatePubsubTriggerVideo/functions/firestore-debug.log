@@ -1,0 +1,147 @@
+Dec 24, 2023 11:18:47 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+API endpoint: http://127.0.0.1:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Dev App Server is now running.
+
+Dec 24, 2023 11:18:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:18:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+Dec 24, 2023 11:18:54 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+Dec 24, 2023 11:19:03 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+Dec 24, 2023 11:19:03 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+Dec 24, 2023 11:19:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:12 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequestV2
+WARNING: Unsuccessful HTTP response when publishing v2 event for projects/projectname-o/eventarcTriggers/us-central1-main-0: 500 Internal Server Error
+POST http://127.0.0.1:5001/functions/projects/projectname-o/triggers/us-central1-main-0
+{"code":"ECONNRESET"}
+Dec 24, 2023 11:19:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:15 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequestV2
+WARNING: Unsuccessful HTTP response when publishing v2 event for projects/projectname-o/eventarcTriggers/us-central1-main-0: 500 Internal Server Error
+POST http://127.0.0.1:5001/functions/projects/projectname-o/triggers/us-central1-main-0
+{"code":"ECONNRESET"}
+Dec 24, 2023 11:19:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:19:52 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequestV2
+WARNING: Unsuccessful HTTP response when publishing v2 event for projects/projectname-o/eventarcTriggers/us-central1-main-0: 500 Internal Server Error
+POST http://127.0.0.1:5001/functions/projects/projectname-o/triggers/us-central1-main-0
+{"code":"ECONNRESET"}
+Dec 24, 2023 11:20:21 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:20:21 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:20:52 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:20:52 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Dec 24, 2023 11:21:21 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:21:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:21:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:21:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:21:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:21:39 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequestV2
+WARNING: Unsuccessful HTTP response when publishing v2 event for projects/projectname-o/eventarcTriggers/us-central1-main-0: 500 Internal Server Error
+POST http://127.0.0.1:5001/functions/projects/projectname-o/triggers/us-central1-main-0
+{"code":"ECONNRESET"}
+Dec 24, 2023 11:22:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:22:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:22:38 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Dec 24, 2023 11:23:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:23:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:23:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:23:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:23:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:23:38 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequestV2
+WARNING: Unsuccessful HTTP response when publishing v2 event for projects/projectname-o/eventarcTriggers/us-central1-main-0: 500 Internal Server Error
+POST http://127.0.0.1:5001/functions/projects/projectname-o/triggers/us-central1-main-0
+{"code":"ECONNRESET"}
+Dec 24, 2023 11:24:07 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:24:29 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:24:29 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:24:29 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:24:30 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequestV2
+WARNING: Unsuccessful HTTP response when publishing v2 event for projects/projectname-o/eventarcTriggers/us-central1-main-0: 500 Internal Server Error
+POST http://127.0.0.1:5001/functions/projects/projectname-o/triggers/us-central1-main-0
+{"code":"ECONNRESET"}
+Dec 24, 2023 11:24:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:25:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:25:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:25:05 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequestV2
+WARNING: Unsuccessful HTTP response when publishing v2 event for projects/projectname-o/eventarcTriggers/us-central1-main-0: 500 Internal Server Error
+POST http://127.0.0.1:5001/functions/projects/projectname-o/triggers/us-central1-main-0
+{"code":"ECONNRESET"}
+Dec 24, 2023 11:25:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:26:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:26:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:26:04 AM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+Dec 24, 2023 11:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:26:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:26:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:26:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:26:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Dec 24, 2023 11:26:48 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequestV2
+WARNING: Unsuccessful HTTP response when publishing v2 event for projects/projectname-o/eventarcTriggers/us-central1-main-0: 500 Internal Server Error
+POST http://127.0.0.1:5001/functions/projects/projectname-o/triggers/us-central1-main-0
+5 NOT_FOUND: Resource not found (resource=query-result-youtube-hydrate-stream-urls).
+Dec 24, 2023 11:27:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+*** shutting down gRPC server since JVM is shutting down
+*** server shut down

@@ -1983,7 +1983,7 @@ window.initMap = () => {
                   setTimeout(function () {
                     i.authorizationCallback === c.authorizationCallback &&
                       console.warn(
-                        '[MapKit] MapKit was initialized with a static authorization Token. authorizationCallback is needed to refresh authorization later.'
+                        '[MapKit] MapKit was initialized with a static authorization Token. authorizationCallback is needed to FleetDriveStateRefresh authorization later.'
                       );
                   }, 5e3);
               };

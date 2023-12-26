@@ -1,0 +1,16 @@
+{
+	"name": "fleet-telemetry",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "node_modules/.bin/wrangler deploy",
+		"dev": "node_modules/.bin/wrangler dev",
+		"start": "node_modules/.bin/wrangler dev"
+	},
+	"devDependencies": {
+		"wrangler": "^3.0.0"
+	},
+	"dependencies": {
+		"@upstash/redis": "^1.25.1"
+	}
+}

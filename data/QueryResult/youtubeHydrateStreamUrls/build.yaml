@@ -1,0 +1,61 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+
+    args:
+      [
+        "build",
+        "-t",
+        "us-west2-docker.pkg.dev/projectname-o/query-result/query-result-youtube-hydrate-stream-url",
+        ".",
+      ]
+    dir: "data/QueryResult/youtube-hydrate-stream-urls"
+
+  - name: "gcr.io/cloud-builders/docker"
+
+    args:
+      [
+        "push",
+        "us-west2-docker.pkg.dev/projectname-o/query-result/query-result-youtube-hydrate-stream-url",
+      ]
+
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      [
+        "run",
+        "deploy",
+        "query-result-youtube-hydrate-stream-url",
+        "--image",
+        "us-west2-docker.pkg.dev/projectname-o/query-result/query-result-youtube-hydrate-stream-url",
+        "--region",
+        "us-west2",
+        "--platform",
+        "managed",
+        "--allow-unauthenticated",
+        "--update-secrets",
+        "GCP_SERVICE_ACCOUNT=GCP_SERVICE_ACCOUNT:latest",
+        "--memory",
+        "512Mi",
+        "--cpu",
+        "2",
+        "--max-instances",
+        "50",
+        "--cpu-boost",
+      ]
+
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      [
+        "eventarc",
+        "triggers",
+        "create",
+        "query-result-video-hydrate-stream-url",
+        "--destination-run-service=query-result-youtube-hydrate-stream-url",
+        "--destination-run-region=us-west2",
+        "--event-filters=type=google.cloud.firestore.document.v1.created",
+        "--event-filters=resource=projects/projectname-o/databases/(default)/documents/QueryResultVideo/{documentId}",
+        "--service-account=x-963-404@projectname-o.iam.gserviceaccount.com",
+        "--location=us-west2",
+      ]
+options:
+  pool:
+    name: "projects/projectname-o/locations/us-west2/workerPools/x"
