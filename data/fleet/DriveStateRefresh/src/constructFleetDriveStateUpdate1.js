@@ -12,18 +12,18 @@ export default async function constructFleetDriveStateUpdate1(obj) {
 			},
 			shift_state: obj.shift_state
 				? {
-					stringValue: obj.shift_state,
-				}
+						stringValue: obj.shift_state,
+					}
 				: {
-					nullValue: null,
-				},
+						nullValue: null,
+					},
 			speed: obj.speed
 				? {
-					integerValue: obj.speed,
-				}
+						integerValue: obj.speed,
+					}
 				: {
-					nullValue: null,
-				},
+						nullValue: null,
+					},
 			heading: {
 				integerValue: obj.heading,
 			},

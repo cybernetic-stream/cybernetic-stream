@@ -1,4 +1,3 @@
-
 export default async function constructFleetDriveStateUpdate2(obj, redis) {
 	return {
 		fields: {

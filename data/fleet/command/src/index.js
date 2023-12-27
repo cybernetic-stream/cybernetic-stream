@@ -1,5 +1,5 @@
 import { Redis } from '@upstash/redis/cloudflare';
-import sendCommand from "./sendCommand";
+import sendCommand from './sendCommand';
 
 export default {
 	async fetch(request, env) {

@@ -25,10 +25,10 @@ export default {
 					statement_descriptor: body.data.object.statement_descriptor
 						? {
 								stringValue: body.data.object.statement_descriptor,
-						  }
+							}
 						: {
 								nullValue: body.data.object.statement_descriptor,
-						  },
+							},
 					status: {
 						stringValue: body.data.object.status,
 					},

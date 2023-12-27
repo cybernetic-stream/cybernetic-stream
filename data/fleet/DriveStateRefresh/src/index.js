@@ -1,7 +1,7 @@
 import { Redis } from '@upstash/redis/cloudflare';
-import constructFleetDriveStateUpdate2 from "./constructFleetDriveStateUpdate2";
-import constructFleetDriveStateUpdate1 from "./constructFleetDriveStateUpdate1";
-import getFleetDriveState from "./getFleetDriveState";
+import constructFleetDriveStateUpdate2 from './constructFleetDriveStateUpdate2';
+import constructFleetDriveStateUpdate1 from './constructFleetDriveStateUpdate1';
+import getFleetDriveState from './getFleetDriveState';
 
 export default {
 	async fetch(request, env) {
@@ -59,6 +59,5 @@ export default {
 		return new Response(null, {
 			headers,
 		});
-
 	},
 };
