@@ -20,7 +20,7 @@ export default {
 		const writes = results
 			.map((elem, index) => {
 				if (elem.url.includes('youtube.com')) {
-					return null; // Skip YouTube links
+					return null;
 				}
 
 				return {

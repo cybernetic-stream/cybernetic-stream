@@ -1,0 +1,19 @@
+name: Deploy fleet command
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/fleet/command/**'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v
+      - name: Set up working directory
+        run: cd data/fleet/command
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: data/fleet/command
