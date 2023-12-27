@@ -16,3 +16,8 @@ jobs:
         with:
           apiToken: ${{ secrets.WORKERS_API_TOKEN }}
           workingDirectory: data/fleet/tokenRefresh
+          secrets: |
+            UPSTASH_REDIS_REST_TOKEN=${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+            TESLA_CLIENT_SECRET=${{ secrets.TESLA_CLIENT_SECRET }}
+          vars: |
+            UPSTASH_REDIS_REST_URL=${{ env.UPSTASH_REDIS_REST_URL }}
