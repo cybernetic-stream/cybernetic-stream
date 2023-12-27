@@ -10,10 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - name: Set up working directory
-        run: cd data/fleet/DriveStateRefresh
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: 62563c716841ba6c3d202c5eb43854979580b
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           workingDirectory: data/fleet/DriveStateRefresh
