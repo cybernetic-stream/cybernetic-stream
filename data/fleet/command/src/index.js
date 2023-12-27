@@ -10,17 +10,6 @@ export default {
 
 		let response = await sendCommand(id, command, await request.json(), await redis.get(`access_token-${id}`));
 
-		if (response.status === 408) {
-			await fetch(`https://fleet-api.prd.na.vn.cloud.tesla.com/api/1/vehicles/${id}/wake_up`, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${await redis.get(`access_token-${id}`)}`,
-				},
-			});
-			await sendCommand(id, command, await request.json(), await redis.get(`access_token-${id}`));
-		}
-
 		const headers = new Headers({
 			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': '*',
