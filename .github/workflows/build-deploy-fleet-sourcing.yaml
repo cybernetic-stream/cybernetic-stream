@@ -17,7 +17,7 @@ jobs:
       - name: Verify credentials
         run: |
           echo "Username: ${{ github.actor }}"
-          if [ -z "${{ secrets.GITHUB_TOKEN }}" ]; then
+          if [ -z "${{ secrets.GHCR_TOKEN }}" ]; then
             echo "GitHub token is not set"
           else
             echo "GitHub token is set"
