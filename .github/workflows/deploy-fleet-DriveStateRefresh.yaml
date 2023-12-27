@@ -13,5 +13,5 @@ jobs:
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.WORKERS_API_TOKEN }}
           workingDirectory: data/fleet/DriveStateRefresh
