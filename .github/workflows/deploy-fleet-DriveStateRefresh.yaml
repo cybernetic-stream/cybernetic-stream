@@ -17,13 +17,13 @@ jobs:
           apiToken: ${{ secrets.WORKERS_API_TOKEN }}
           workingDirectory: data/fleet/DriveStateRefresh
 
-     - name: set trigger
-       run: |
-    curl --request POST \
-    --url https://api.cloudflare.com/client/v4/zones/975e6920fb64853af2fa60f2b00d0151/workers/routes \
-    --header 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}' \
-    --header 'Content-Type: application/json' \
-    --data '{
-      "pattern": "fleet-drive-state-refresh.cyberneticstream.com/*",
-      "script": "fleet-drive-state-refresh"
-    }'
+      - name: set trigger
+        run: |
+          curl --request POST \
+          --url https://api.cloudflare.com/client/v4/zones/975e6920fb64853af2fa60f2b00d0151/workers/routes \
+          --header 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}' \
+          --header 'Content-Type: application/json' \
+          --data '{
+            "pattern": "fleet-drive-state-refresh.cyberneticstream.com/*",
+            "script": "fleet-drive-state-refresh"
+          }'
