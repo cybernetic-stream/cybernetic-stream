@@ -19,7 +19,6 @@ export default {
 				headers,
 			});
 		}
-
 		await redis.set(`last_update-${id}`, new Date().getTime());
 
 		const fleetDriveState = await getFleetDriveState(id, await redis.get(`access_token-${id}`));

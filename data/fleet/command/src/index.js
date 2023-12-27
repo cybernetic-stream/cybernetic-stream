@@ -4,7 +4,6 @@ import sendCommand from './sendCommand';
 export default {
 	async fetch(request, env) {
 		const redis = Redis.fromEnv(env);
-
 		const url = new URL(request.url);
 		const id = url.searchParams.get('id');
 		const command = url.searchParams.get('command');
