@@ -18,6 +18,7 @@ jobs:
           workingDirectory: data/fleet/command
           secrets: |
           UPSTASH_REDIS_REST_TOKEN
-      env:
-        UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
-        UPSTASH_REDIS_REST_URL: ${{ env.UPSTASH_REDIS_REST_URL }}
+          env:
+            UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+            UPSTASH_REDIS_REST_URL: ${{ env.UPSTASH_REDIS_REST_URL }}
+  
