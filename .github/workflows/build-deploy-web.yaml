@@ -19,7 +19,13 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18'  # Specify your Node.js version
+        node-version: '21'  # Using Node.js version 21
+
+    - name: Check Current Working Directory
+      run: pwd
+
+    - name: List Directory Contents
+      run: ls -l
 
     - name: Install Dependencies
       run: npm install
@@ -30,7 +36,6 @@ jobs:
     - name: Vercel Deployment
       uses: amondnet/vercel-action@v20
       with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        vercel-token: jWhFKnfDuYLxEd4qD7vwuCPL
+        vercel-project-id: jM1aImV93aERAfSCCFhpx6RH
         vercel-args: '--prod'
