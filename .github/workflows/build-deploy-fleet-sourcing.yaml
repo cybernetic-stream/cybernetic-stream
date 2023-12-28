@@ -21,8 +21,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: docker.io
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: usernamex36
+          password: dckr_pat_Vy2XuWKOMb6RzOwpMKjGrYklQoY
 
       - name: List files in the current directory
         run: ls -lah
