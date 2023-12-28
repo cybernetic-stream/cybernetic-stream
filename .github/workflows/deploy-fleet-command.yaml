@@ -18,7 +18,7 @@ jobs:
         with:
           apiToken: ${{ secrets.WORKERS_API_TOKEN }}
           workingDirectory: data/fleet/command
-          environment: production
+          environment: preview
           secrets: |
             UPSTASH_REDIS_REST_TOKEN
         env:

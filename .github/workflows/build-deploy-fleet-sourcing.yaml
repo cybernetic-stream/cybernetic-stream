@@ -29,7 +29,7 @@ jobs:
         with:
           registry: docker.io
           username: usernamex36
-          password:  ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push to GitHub Container Registry
         uses: docker/build-push-action@v2
@@ -48,3 +48,24 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: docker.io/usernamex36/sourcing-app:latest
+
+      # Set up Google Cloud CLI
+      - name: Set up Google Cloud
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+
+      # Configure Docker to use the gcloud command-line tool as a credential helper
+      - name: Configure Docker for GCP
+        run: |
+          gcloud auth configure-docker
+
+      # Deploy to Google Cloud Run
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy ${{ secrets.SERVICE_NAME }} \
+            --image ghcr.io/${{ github.repository }}/sourcing-app:latest \
+            --platform managed \
+            --region ${{ secrets.GCP_REGION }} \
+            --allow-unauthenticated
