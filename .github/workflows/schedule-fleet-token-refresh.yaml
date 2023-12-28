@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Call Web URL
+    - name: fleet token refresh
       run: |
         curl -f -X POST "https://fleet-token-refresh.cyberneticstream.workers.dev" \
              -H "Content-Type: application/json" \
