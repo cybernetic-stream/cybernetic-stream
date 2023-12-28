@@ -1,0 +1,27 @@
+name: Build and Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    - name: Vercel Deployment
+      uses: amondnet/vercel-action@v20
+      with:
+        vercel-token: jWhFKnfDuYLxEd4qD7vwuCPL
+        vercel-project-id: jM1aImV93aERAfSCCFhpx6RH
+        vercel-args: '--prod'

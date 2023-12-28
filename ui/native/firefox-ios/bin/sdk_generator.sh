@@ -162,7 +162,7 @@ VENVDIR="${SOURCE_ROOT}/.venv"
 "${VENVDIR}"/bin/pip install --upgrade "glean_parser~=$GLEAN_PARSER_VERSION"
 
 # Run the glinter
-# Turn its warnings into warnings visible in Xcode (but don't do for the success message)
+# Turn its warnings into warnings visible in Xcode (but don't do for the success Message)
 "${VENVDIR}"/bin/python -m glean_parser \
     glinter \
     $ALLOW_RESERVED \

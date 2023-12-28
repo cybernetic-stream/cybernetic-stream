@@ -1198,14 +1198,14 @@ FormAutofillUtils = {
     return MAP[key];
   },
   /**
-   * Generates the localized os dialog message that
+   * Generates the localized os dialog Message that
    * prompts the user to reauthenticate
    *
-   * @param {string} msgMac fluent message id for macos clients
-   * @param {string} msgWin fluent message id for windows clients
-   * @param {string} msgOther fluent message id for other clients
-   * @param {string} msgLin (optional) fluent message id for linux clients
-   * @returns {string} localized os prompt message
+   * @param {string} msgMac fluent Message id for macos clients
+   * @param {string} msgWin fluent Message id for windows clients
+   * @param {string} msgOther fluent Message id for other clients
+   * @param {string} msgLin (optional) fluent Message id for linux clients
+   * @returns {string} localized os prompt Message
    */
   reauthOSPromptMessage(msgMac, msgWin, msgOther, msgLin = null) {
     const platform = AppConstants.platform;

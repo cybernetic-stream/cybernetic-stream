@@ -6,7 +6,7 @@
 import FormAutofillHelper from "resource://gre/modules/shared/EntryFile.sys.mjs";
 import FormAutofillExtras from "Assets/CC_Script/FormAutofillExtras.ios.mjs";
 
-// Define supported message types.
+// Define supported Message types.
 const messageTypes = {
   FILL_CREDIT_CARD_FORM: "fill-credit-card-form",
   CAPTURE_CREDIT_CARD_FORM: "capture-credit-card-form",
@@ -18,7 +18,7 @@ const transformers = {
   forward: (payload) => payload,
 };
 
-// Generic Helper function to send a message back to swift.
+// Generic Helper function to send a Message back to swift.
 const sendMessage =
   (messageHandler) =>
   (type, transformer = transformers.forward) =>

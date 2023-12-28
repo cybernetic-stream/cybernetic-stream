@@ -183,7 +183,7 @@ function updateImageMargins() {
 
 function showContent() {
   // Make the reader visible
-  var messageElement = document.getElementById("reader-message");
+  var messageElement = document.getElementById("reader-Message");
   if (messageElement) {
     messageElement.style.display = "none";
   }

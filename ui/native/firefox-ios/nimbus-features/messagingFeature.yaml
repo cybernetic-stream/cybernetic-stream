@@ -59,8 +59,8 @@ features:
 
       on-control:
         type: ControlMessageBehavior
-        description: What should be displayed when a control message is selected.
-        default: show-next-message
+        description: What should be displayed when a control Message is selected.
+        default: show-next-Message
 
       $$experiment::
         type: ExperimentSlug
@@ -156,7 +156,7 @@ features:
       - channel: developer
         value:
           messages:
-            # Serves as an example of how survey message might be formatted
+            # Serves as an example of how survey Message might be formatted
             survey-surface-message:
               surface: survey
               style: SURVEY
@@ -189,12 +189,12 @@ objects:
         default: null
       text:
         type: Text
-        description: "The message text displayed to the user"
+        description: "The Message text displayed to the user"
         # This should never be defaulted.
         default: ""
       is-control:
         type: Boolean
-        description: "Indicates if this message is the control message, if true shouldn't be displayed"
+        description: "Indicates if this Message is the control Message, if true shouldn't be displayed"
         default: false
       button-label:
         type: Option<Text>
@@ -217,11 +217,11 @@ objects:
         default: []
       surface:
         type: MessageSurfaceId
-        description: Each message will tell us the surface it is targeting with this.
+        description: Each Message will tell us the surface it is targeting with this.
         default: Unknown
       experiment:
         type: Option<ExperimentSlug>
-        description: The experiment slug that this message is involved in.
+        description: The experiment slug that this Message is involved in.
         default: null
 
   StyleData:
@@ -255,12 +255,12 @@ enums:
       notification:
         description: This is a local notification send to the user periodically with tips and updates.
       Unknown:
-        description: A message has NOT declared its target surface.
+        description: A Message has NOT declared its target surface.
 
   ControlMessageBehavior:
-    description: An enum to influence what should be displayed when a control message is selected.
+    description: An enum to influence what should be displayed when a control Message is selected.
     variants:
       show-next-message:
-        description: The next eligible message should be shown.
+        description: The next eligible Message should be shown.
       show-none:
-        description: The surface should show no message.
+        description: The surface should show no Message.

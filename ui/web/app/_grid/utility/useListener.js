@@ -25,12 +25,12 @@ export default function useListener({
       let app;
       if (!getApps().length) {
         app = initializeApp({
-          apiKey: "AIzaSyAYeaFR2_91kcRKNLy1okBcSGlMcu1F3tE",
-          authDomain: "projectname-o.firebaseapp.com",
-          projectId: "projectname-o",
-          storageBucket: "projectname-o.appspot.com",
-          messagingSenderId: "131875772321",
-          appId: "1:131875772321:web:7bb1f2f14568b5e0715de0",
+          apiKey: "AIzaSyAsxlVoVu08VZJpI2bzdYUruuQafQZyg3M",
+          authDomain: "projectid-x.firebaseapp.com",
+          projectId: "projectid-x",
+          storageBucket: "projectid-x.appspot.com",
+          messagingSenderId: "211384317349",
+          appId: "1:211384317349:web:d3d7253dd24942e695244c"
         });
       } else {
         app = getApps()[0];
