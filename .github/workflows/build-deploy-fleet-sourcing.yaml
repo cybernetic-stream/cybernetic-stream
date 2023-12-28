@@ -37,4 +37,4 @@ jobs:
           file: ./data/fleet/Sourcing/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: docker.io/YOUR_DOCKERHUB_USERNAME/sourcing-app:latest
+          tags: docker.io/usernamex36/sourcing-app:latest
