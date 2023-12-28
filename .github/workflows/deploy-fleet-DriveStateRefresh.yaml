@@ -27,7 +27,7 @@ jobs:
           apiToken: ${{ secrets.WORKERS_API_TOKEN }}
           workingDirectory: data/fleet/DriveStateRefresh
           secrets: |
-            UPSTASH_REDIS_REST_TOKEN=${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
-            GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}
+            UPSTASH_REDIS_REST_TOKEN='AYMYACQgNGJmYzQ5ZWEtZjI3OS00NDVlLWJmNTItMmNiOWM3OWZmY2E5ZTIwMzA0OGUwYjM1NDVlZDkwZDFhNzIxODhjNGNjOTQ='
+            GOOGLE_API_KEY='AIzaSyAfXK64bH4eilMvxBciY1u4dj7nphDsPho'
           vars: |
-            UPSTASH_REDIS_REST_URL=${{ env.UPSTASH_REDIS_REST_URL }}
+            UPSTASH_REDIS_REST_URL='https://usw1-curious-swan-33560.upstash.io'
