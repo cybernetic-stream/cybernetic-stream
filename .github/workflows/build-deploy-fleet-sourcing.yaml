@@ -22,14 +22,14 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: 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
+          password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
           registry: docker.io
           username: usernamex36
-          password: dckr_pat_Vy2XuWKOMb6RzOwpMKjGrYklQoY
+          password:  ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push to GitHub Container Registry
         uses: docker/build-push-action@v2
@@ -39,12 +39,6 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: ghcr.io/${{ github.repository }}/sourcing-app:latest
-
-      - name: List files in the current directory
-        run: ls -lah
-
-      - name: Print the working directory
-        run: pwd
 
       - name: Build and push to Docker Hub
         uses: docker/build-push-action@v2
