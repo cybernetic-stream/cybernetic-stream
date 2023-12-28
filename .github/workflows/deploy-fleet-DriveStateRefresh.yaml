@@ -6,7 +6,18 @@ on:
       - main
     paths:
       - 'data/fleet/DriveStateRefresh/**'
-
+jobs:
+  deploy:
+    steps:
+      uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        secrets: |
+          UPSTASH_REDIS_REST_TOKEN
+          GOOGLE_API_KEY
+      env:
+        UPSTASH_REDIS_REST_TOKEN: ${{ secrets.SECRET1 }}
+        SECRET2: ${{ secrets.SECRET2 }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
