@@ -18,7 +18,7 @@ jobs:
         with:
           apiToken: ${{ secrets.WORKERS_API_TOKEN }}
           workingDirectory: data/fleet/DriveStateRefresh
-          environment: preview
+          environment: production
           secrets: |
             UPSTASH_REDIS_REST_TOKEN
             GOOGLE_API_KEY
