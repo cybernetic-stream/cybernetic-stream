@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Rename directory
-        run: mv ui/web-s web-s-${doc.id.replaceAll(" ", '-').toLowerCase()}
+        run: mv ../web-s ../web-s-${doc.id.replaceAll(" ", '-').toLowerCase()}
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
