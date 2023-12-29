@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Rename directory
-        run: mv ui/web-s web-s-800-marina-blvd-san-leandro,-ca-94577
+        run: mv ../web-s ../web-s-800-marina-blvd-san-leandro,-ca-94577
 
       - name: Set up Node.js
         uses: actions/setup-node@v2

@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Rename directory
-        run: mv ui/web-s web-s-921-colusa-ave-oroville,-ca-95965
+        run: mv ../web-s ../web-s-921-colusa-ave-oroville,-ca-95965
 
       - name: Set up Node.js
         uses: actions/setup-node@v2

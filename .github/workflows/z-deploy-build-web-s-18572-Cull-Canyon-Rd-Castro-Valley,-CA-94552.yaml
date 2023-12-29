@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Rename directory
-        run: mv ui/web-s web-s-18572-cull-canyon-rd-castro-valley,-ca-94552
+        run: mv ../web-s ../web-s-18572-cull-canyon-rd-castro-valley,-ca-94552
 
       - name: Set up Node.js
         uses: actions/setup-node@v2

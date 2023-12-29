@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Rename directory
-        run: mv ui/web-s web-s-3617-hemlock-ave-ceres,-ca-95307
+        run: mv ../web-s ../web-s-3617-hemlock-ave-ceres,-ca-95307
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
