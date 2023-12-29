@@ -30,13 +30,15 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ui/web-s
+        working-directory:  web-s-${doc.id.replaceAll(" ", '-').toLowerCase()}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
+
       - name: Rename directory
-        run: mv ../web-s ../web-s-${doc.id.replaceAll(" ", '-').toLowerCase()}
+        run: mv ui/web-s web-s-${doc.id.replaceAll(" ", '-').toLowerCase()}
+        working-directory: \${{ github.workspace }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
