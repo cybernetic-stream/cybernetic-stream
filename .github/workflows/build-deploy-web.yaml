@@ -5,16 +5,13 @@ on: [push]
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ui/web
-    permissions:
-      contents: read
-      deployments: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Rename directory
+        run: mv ui/web z-web-s
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -23,15 +20,19 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: z-web-s
 
       - name: Vercel Project Settings
         run: vercel pull --yes --scope teamname-x --environment=production --token ${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        working-directory: z-web-s
 
       - name: Vercel Build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
+        working-directory: z-web-s
 
       - name: Vercel Deploy
         run: npx vercel deploy --prebuilt --token ${{ secrets.VERCEL_TOKEN }} --prod
+        working-directory: z-web-s
