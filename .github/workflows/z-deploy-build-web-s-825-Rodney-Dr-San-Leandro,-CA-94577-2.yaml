@@ -1,3 +1,5 @@
+name: Z build deploy 825 Rodney Dr San Leandro, CA 94577 2
+
 on: [push]
 
 jobs:
@@ -24,13 +26,13 @@ jobs:
 
       - name: Build
         env:
-          SUBLICENSE: 825 Rodney Dr San Leandro, CA 94577 2
+          NEXT_PUBLIC_SUBLICENSE: 825 Rodney Dr San Leandro, CA 94577 2
         run: npx @cloudflare/next-on-pages@1
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
-          apiToken: ${{ secrets.WORKERS_API_TOKEN }}
+          apiToken: ${{ secrets.WORKsERS_API_TOKEN }}
           accountId: 6ce4136310d824f1913793767b70aad8
           projectName: web-s-825-Rodney-Dr-San-Leandro,-CA-94577-2
           directory: ui/web-s/.vercel
