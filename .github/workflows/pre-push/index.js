@@ -22,7 +22,9 @@ async function main() {
         const sublicense = doc.data();
         const filename = `../z-deploy-build-web-s-${doc.id.replaceAll(' ', '-')}.yaml`;
 
-        const content = `on: [push]
+        const content = `name: Z build deploy ${doc.id}
+
+on: [push]
 
 jobs:
   publish:
