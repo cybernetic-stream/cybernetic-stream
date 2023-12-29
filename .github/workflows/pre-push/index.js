@@ -84,6 +84,8 @@ async function deleteZPrefixedFiles(directory = '../') {
   }
 }
 
+async function add
+
 deleteZPrefixedFiles().then(() => {
   main().then(() => process.exit(0));
 })
