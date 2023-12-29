@@ -16,17 +16,6 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '21'  # Using Node.js version 21
-
-    - name: Check Current Working Directory
-      run: pwd
-
-    - name: List Directory Contents
-      run: ls -l
-
     - name: Install Dependencies
       run: npm install
 
