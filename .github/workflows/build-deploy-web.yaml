@@ -1,4 +1,4 @@
-name: Build Deploy Web
+name: Deploy to Vercel
 
 on: [push]
 
@@ -23,6 +23,12 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Vercel Project Settings
+        run: npx vercel pull --yes --token ${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Vercel Build
         run: npx vercel build --token ${{ secrets.VERCEL_TOKEN }}
