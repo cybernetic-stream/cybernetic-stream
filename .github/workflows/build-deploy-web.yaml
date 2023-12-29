@@ -35,3 +35,10 @@ jobs:
 
       - name: Vercel Deploy
         run: npx vercel deploy --prebuilt --token ${{ secrets.VERCEL_TOKEN }} --prod
+
+      - name: Domains
+        run: vercel domains add cyberneticstream.com web --scope teamname-x   --token ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Domains
+        run: vercel domains add www.cyberneticstream.com web --scope teamname-x   --token ${{ secrets.VERCEL_TOKEN }}
+
