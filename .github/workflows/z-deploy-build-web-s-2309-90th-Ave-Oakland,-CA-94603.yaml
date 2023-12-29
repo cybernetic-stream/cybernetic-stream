@@ -1,5 +1,4 @@
 name: Z build deploy 2309 90th Ave Oakland, CA 94603
-name: Z build deploy 2309 90th Ave Oakland, CA 94603
 on: [push]
 
 jobs:

@@ -1,5 +1,4 @@
 name: Z build deploy 800 Marina Blvd San Leandro, CA 94577
-name: Z build deploy 800 Marina Blvd San Leandro, CA 94577
 on: [push]
 
 jobs:

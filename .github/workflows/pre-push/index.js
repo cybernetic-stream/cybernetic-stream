@@ -23,7 +23,6 @@ async function main() {
         const filename = `../z-deploy-build-web-s-${doc.id.replaceAll(' ', '-')}.yaml`;
 
         const content = `name: Z build deploy ${doc.id}
-name: Z build deploy ${doc.id}
 on: [push]
 
 jobs:

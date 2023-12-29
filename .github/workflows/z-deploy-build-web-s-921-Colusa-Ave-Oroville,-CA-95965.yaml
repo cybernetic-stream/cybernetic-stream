@@ -1,5 +1,4 @@
 name: Z build deploy 921 Colusa Ave Oroville, CA 95965
-name: Z build deploy 921 Colusa Ave Oroville, CA 95965
 on: [push]
 
 jobs:

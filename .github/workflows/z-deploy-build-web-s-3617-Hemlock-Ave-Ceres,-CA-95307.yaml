@@ -1,5 +1,4 @@
 name: Z build deploy 3617 Hemlock Ave Ceres, CA 95307
-name: Z build deploy 3617 Hemlock Ave Ceres, CA 95307
 on: [push]
 
 jobs:

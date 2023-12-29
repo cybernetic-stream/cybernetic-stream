@@ -1,5 +1,4 @@
 name: Z build deploy 35 Castro St San Leandro, CA 94577
-name: Z build deploy 35 Castro St San Leandro, CA 94577
 on: [push]
 
 jobs:

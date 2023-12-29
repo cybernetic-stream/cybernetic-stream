@@ -1,5 +1,4 @@
 name: Z build deploy 18572 Cull Canyon Rd Castro Valley, CA 94552
-name: Z build deploy 18572 Cull Canyon Rd Castro Valley, CA 94552
 on: [push]
 
 jobs:
