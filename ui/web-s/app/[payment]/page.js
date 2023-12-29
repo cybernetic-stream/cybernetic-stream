@@ -1,7 +1,7 @@
 import RootPage from '../page';
 import ShowPaymentModal from '../_components/PaymentModal/show-payment-modal';
 import namesAsKeys from '../_lib/namesAsKeys';
-import { db } from '../../firestore.mjs';
+import { db } from '../../firestore.js';
 
 export async function generateStaticParams() {
   const initialActionablePaymentsSnapshot = await db

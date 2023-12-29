@@ -23,7 +23,7 @@ currentScript.setAttribute('data-callback', 'initMap');
 currentScript.setAttribute('data-libraries', 'map,annotations');
 currentScript.setAttribute(
   'data-initial-Token',
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjRXNjgzUDVHUkoifQ.eyJpc3MiOiJLN0E2VEhHWkQzIiwiaWF0IjoxNjg5MjA0ODg3LCJleHAiOjE3MjA3NDA4ODd9.RsfJ37xSpbRhnc_3gciS94dHNjvgZoF-W37nFgsAwDxVhp6zo6gyR_vXCa6qW55o-P9ZDoexVY81JhmgVBoDFw'
+  "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjRXNjgzUDVHUkoifQ.eyJpc3MiOiJLN0E2VEhHWkQzIiwiaWF0IjoxNjg5MjA0ODg3LCJleHAiOjE3MjA3NDA4ODd9.RsfJ37xSpbRhnc_3gciS94dHNjvgZoF-W37nFgsAwDxVhp6zo6gyR_vXCa6qW55o-P9ZDoexVY81JhmgVBoDFw"
 );
 currentScript.setAttribute(
   'src',

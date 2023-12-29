@@ -18,12 +18,12 @@ export default function DataProvider({
   useEffect(() => {
     const initDbListeners = async () => {
       const firebaseConfig = {
-        apiKey: 'AIzaSyAYeaFR2_91kcRKNLy1okBcSGlMcu1F3tE',
-        authDomain: 'projectname-o.firebaseapp.com',
-        projectId: 'projectname-o',
-        storageBucket: 'projectname-o.appspot.com',
-        messagingSenderId: '131875772321',
-        appId: '1:131875772321:web:7565dbe934f82dfe715de0',
+        apiKey: "AIzaSyAsxlVoVu08VZJpI2bzdYUruuQafQZyg3M",
+        authDomain: "projectid-x.firebaseapp.com",
+        projectId: "projectid-x",
+        storageBucket: "projectid-x.appspot.com",
+        messagingSenderId: "211384317349",
+        appId: "1:211384317349:web:d3d7253dd24942e695244c"
       };
 
       const { initializeApp } = await import('firebase/app');
@@ -45,7 +45,7 @@ export default function DataProvider({
 
       onSnapshot(
         query(
-          collection(db, 'payment'),
+          collection(db, 'SublicensePayment'),
           where('place', '==', process.env.NEXT_PUBLIC_PLACE),
           where('status', 'in', ['requires_payment_method', 'requires_action']),
           orderBy('created', 'asc')

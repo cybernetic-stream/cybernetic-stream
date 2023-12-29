@@ -5,7 +5,7 @@ import LayoutRect from './_components/layout-rect';
 import DataProvider from './_components/data-provider';
 import namesAsKeys from './_lib/namesAsKeys';
 import HiddenPaymentModals from './_components/PaymentModal/hidden-payment-modals';
-import { db } from '../firestore.mjs';
+import { db } from '../firestore.js';
 
 const SFMonoRegular = localFont({
   src: 'SF-Mono-Regular.otf',
@@ -28,13 +28,13 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const placeData = (
-    await db.collection('place').doc(process.env.NEXT_PUBLIC_PLACE).get()
+    await db.collection('Sublicense').doc(process.env.NEXT_PUBLIC_PLACE).get()
   ).data();
   const initialPlaceData = { name: placeData.name };
 
   const initialActionablePaymentsSnapshot = await db
-    .collection('payment')
-    .where('place', '==', process.env.NEXT_PUBLIC_PLACE)
+    .collection('SublicensePayment')
+    .where('Sublicense', '==', process.env.NEXT_PUBLIC_PLACE)
     .where('status', 'in', ['requires_payment_method', 'requires_action'])
     .orderBy('created', 'asc')
     .get();

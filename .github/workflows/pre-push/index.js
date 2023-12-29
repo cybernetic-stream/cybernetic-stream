@@ -1,9 +1,8 @@
 import {initializeApp} from 'firebase/app'
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import {writeFile} from 'fs/promises';
-import { promises as fsPromises } from 'fs'; // Import fs/promises
-import { join } from 'path'; // Import join from path
-
+import { promises as fsPromises } from 'fs';
+import { join } from 'path';
 
 const app = initializeApp({
     apiKey: "AIzaSyAsxlVoVu08VZJpI2bzdYUruuQafQZyg3M",
@@ -16,13 +15,12 @@ const app = initializeApp({
 
 const db = getFirestore(app);
 
-
 async function main() {
     const querySnapshot = await getDocs(collection(db, 'Sublicense'));
 
     const writes = await Promise.all(querySnapshot.docs.map(async (doc) => {
         const sublicense = doc.data();
-        const filename = `../z-deploy-build-web-s-${doc.id}.yaml`;
+        const filename = `../z-deploy-build-web-s-${doc.id.replaceAll(' ', '-')}.yaml`;
 
         const content = `on: [push]
 
@@ -50,13 +48,13 @@ jobs:
 
       - name: Build
         env:
-          SUBLICENSE: ${doc.id}
+          NEXT_PUBLIC_SUBLICENSE: ${doc.id}
         run: npx @cloudflare/next-on-pages@1
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
-          apiToken: \${{ secrets.WORKERS_API_TOKEN }}
+          apiToken: \${{ secrets.WORKsERS_API_TOKEN }}
           accountId: 6ce4136310d824f1913793767b70aad8
           projectName: web-s-${doc.id.replaceAll(' ', '-')}
           directory: ui/web-s/.vercel

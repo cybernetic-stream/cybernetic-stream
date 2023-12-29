@@ -1,15 +1,16 @@
 import Link from 'next/link';
 import LayoutRect from './_components/layout-rect';
 import ActionablePaymentsLinkTags from './_components/actionable-payments-link-tags';
-import { db } from '../firestore.mjs';
+import { db } from '../firestore.js';
 
 export default async function Page() {
   const name = (
-    await db.collection('place').doc(process.env.NEXT_PUBLIC_PLACE).get()
+    await db.collection('Sublicense').doc(process.env.NEXT_PUBLIC_PLACE).get()
   ).data().name;
 
   const links = [
-    { href: '/access', text: 'access' },
+    { href: '/unlock', text: 'unlock' },
+    { href: '/lock', text: 'lock' },
     { component: <ActionablePaymentsLinkTags /> },
     { href: '/payments', text: '...' },
   ];

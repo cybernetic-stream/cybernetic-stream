@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 const fs = require('fs');
-const { db } = require('./firestore.mjs');
+const { db } = require('./firestore.js');
 
 dotenv.config();
 dotenv.config({ path: './.env.local.local', override: true });
