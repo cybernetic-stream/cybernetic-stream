@@ -1,4 +1,4 @@
-const config = {
+const config = {"latitudeDeltaDefault":0.00046658752874999997,"longitudeDeltaDefault":0.00028201219624999997,"latitudeDeltaNarrow":0.000516104675,"longitudeDeltaNarrow":0.00111860435,"latitudeDeltaShort":0.0009331770000000001,"longitudeDeltaShort":0.0005640280000000001,"latitudeOffsetShort":-0.00007400000000000001,"longitudeOffsetWide":0.000043937500000000004,"latitudeOffsetNarrow":-0.143375};
   coordinates: [37.71402, -122.0549449],
   unit: null,
   latitudeDeltaDefault: 0.00050441895,
