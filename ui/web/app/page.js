@@ -33,7 +33,7 @@ export default async function Page() {
 
   return (
     <>
-      <Index />
+      <Index places={places} sublicenseInitialData={{places}} />
     </>
   );
 }
