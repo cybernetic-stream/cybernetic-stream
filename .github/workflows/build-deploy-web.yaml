@@ -31,7 +31,7 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Vercel Build
-        run: npx vercel build --environment=production --token ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Vercel Deploy
         run: npx vercel deploy --prebuilt --token ${{ secrets.VERCEL_TOKEN }} --prod
