@@ -27,5 +27,5 @@ jobs:
       with:
         vercel-token: jWhFKnfDuYLxEd4qD7vwuCPL
         vercel-org-id: team_NkmdgyTXKfVE5tqCg68snMPk
-        vercel-project-id: jM1aImV93aERAfSCCFhpx6RH
+        vercel-project-id: prj_s6vpLFdnRC5GwKhVcuuULLkbNclz
         vercel-args: '--prod'
