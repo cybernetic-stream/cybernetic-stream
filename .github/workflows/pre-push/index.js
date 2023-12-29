@@ -20,7 +20,7 @@ async function main() {
 
     const writes = await Promise.all(querySnapshot.docs.map(async (doc) => {
         const sublicense = doc.data();
-        const filename = `../z-deploy-build-web-s-${doc.id.replaceAll(' ', '-')}.yaml`;
+        const filename = `../z-deploy-build-web-s-${doc.id.replaceAll(' ', '-').toLowerCase()}.yaml`;
 
         const content = `name: Z build deploy ${doc.id}
 on: [push]
@@ -30,14 +30,14 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory:  web-s-${doc.id.replaceAll(" ", '-').toLowerCase()}
+        working-directory:  web-s-${doc.id.replaceAll(" ", '-').replaceAll(',', '').toLowerCase()}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
 
       - name: Rename directory
-        run: mv ui/web-s web-s-${doc.id.replaceAll(" ", '-').toLowerCase()}
+        run: mv ui/web-s web-s-${doc.id.replaceAll(" ", '-').replaceAll(',', '').toLowerCase()}
         working-directory: \${{ github.workspace }}
 
       - name: Set up Node.js

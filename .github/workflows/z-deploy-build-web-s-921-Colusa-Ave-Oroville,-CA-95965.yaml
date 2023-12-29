@@ -6,14 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory:  web-s-921-colusa-ave-oroville,-ca-95965
+        working-directory:  web-s-921-colusa-ave-oroville-ca-95965
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
 
       - name: Rename directory
-        run: mv ui/web-s web-s-921-colusa-ave-oroville,-ca-95965
+        run: mv ui/web-s web-s-921-colusa-ave-oroville-ca-95965
         working-directory: ${{ github.workspace }}
 
       - name: Set up Node.js

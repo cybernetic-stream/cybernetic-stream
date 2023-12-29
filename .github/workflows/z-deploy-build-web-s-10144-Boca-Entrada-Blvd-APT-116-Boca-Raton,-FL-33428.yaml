@@ -6,14 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory:  web-s-10144-boca-entrada-blvd-apt-116-boca-raton,-fl-33428
+        working-directory:  web-s-10144-boca-entrada-blvd-apt-116-boca-raton-fl-33428
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
 
       - name: Rename directory
-        run: mv ui/web-s web-s-10144-boca-entrada-blvd-apt-116-boca-raton,-fl-33428
+        run: mv ui/web-s web-s-10144-boca-entrada-blvd-apt-116-boca-raton-fl-33428
         working-directory: ${{ github.workspace }}
 
       - name: Set up Node.js
