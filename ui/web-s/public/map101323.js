@@ -11,7 +11,6 @@ const config = {"latitudeDeltaDefault":0.00046658752874999997,"longitudeDeltaDef
   longitudeOffsetWide: 0.0000475,
   latitudeOffsetNarrow: -0.155,
 };
-// Get all script tags
 if (window.devicePixelRatio < 1.5) {
   window.devicePixelRatio = 1.5;
 }
