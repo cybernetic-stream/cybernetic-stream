@@ -1,7 +1,9 @@
+name: Build Deploy Web
+
 on: [push]
 
 jobs:
-  publish:
+  deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -9,7 +11,7 @@ jobs:
     permissions:
       contents: read
       deployments: write
-    name: Publish to Cloudflare Pages
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -17,21 +19,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '21' 
+          node-version: '21'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npx @cloudflare/next-on-pages@1
+      - name: Vercel Build
+        run: npx vercel build --token ${{ secrets.VERCEL_TOKEN }}
 
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.WORKERS_API_TOKEN }}
-          accountId: 6ce4136310d824f1913793767b70aad8
-          projectName: cybernetic-stream
-          directory: ui/web/.vercel
-          gitHubToken: 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
-          branch: main
-          wranglerVersion: '3'
+      - name: Vercel Deploy
+        run: npx vercel deploy --token ${{ secrets.VERCEL_TOKEN }} --prod
