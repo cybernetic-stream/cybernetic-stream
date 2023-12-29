@@ -1,0 +1,39 @@
+on: [push]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ui/web-s
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '21' 
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        env:
+          SUBLICENSE: 945 Estabrook St San Leandro, CA 94577
+        run: npx @cloudflare/next-on-pages@1
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.WORKERS_API_TOKEN }}
+          accountId: 6ce4136310d824f1913793767b70aad8
+          projectName: web-s-945-Estabrook-St-San-Leandro,-CA-94577
+          directory: ui/web-s/.vercel
+          gitHubToken: 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
+          branch: main
+          wranglerVersion: '3'
