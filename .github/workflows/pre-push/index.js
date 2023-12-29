@@ -23,46 +23,40 @@ async function main() {
         const filename = `../z-deploy-build-web-s-${doc.id.replaceAll(' ', '-')}.yaml`;
 
         const content = `name: Z build deploy ${doc.id}
-
 on: [push]
 
 jobs:
-  publish:
+  deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ui/web-s
-    permissions:
-      contents: read
-      deployments: write
-    name: Publish to Cloudflare Pages
+   defaults:
+        run:
+          working-directory: ui/web-s
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Rename directory
+        run: mv ui/web-s web-s-${ doc.id.replaceAll(" ", '-').toLowerCase()}
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '21' 
+          node-version: '21'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Vercel Project Settings
+        run: vercel pull --yes --scope teamname-x --environment=production --token \${{ secrets.VERCEL_TOKEN }}
         env:
-          NEXT_PUBLIC_SUBLICENSE: ${doc.id}
-        run: npx @cloudflare/next-on-pages@1
+          VERCEL_ORG_ID: \${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: \${{ secrets.VERCEL_PROJECT_ID }}
 
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: \${{ secrets.WORKERS_API_TOKEN }}
-          accountId: 6ce4136310d824f1913793767b70aad8
-          projectName: web-s-${doc.id.replaceAll(' ', '-')}
-          directory: ui/web-s/.vercel
-          gitHubToken: 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
-          branch: main
-          wranglerVersion: '3'
+      - name: Vercel Build
+        run: npx vercel build --prod --token \${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel Deploy
+        run: npx vercel deploy --prebuilt --token \${{ secrets.VERCEL_TOKEN }} --prod
 `;
 
         await writeFile(filename, content, 'utf8');
