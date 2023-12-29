@@ -10,6 +10,7 @@ export default async function Page({ params }) {
       .toString(16)
       .padStart(4, "0");
 
+  console.log('neon')
   console.log(id);
   console.log(params.query);
   await fetch("https://trigger.cyberneticstream.workers.dev", {
