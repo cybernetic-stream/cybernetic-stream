@@ -14,10 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: List directory structure
-        run: ls -R
-
-      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -35,7 +31,7 @@ jobs:
           apiToken: ${{ secrets.WORKERS_API_TOKEN }}
           accountId: 6ce4136310d824f1913793767b70aad8
           projectName: cybernetic-stream
-          directory: .vercel/output/static
+          directory: .vercel
           gitHubToken: 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
           branch: main
           wranglerVersion: '3'
