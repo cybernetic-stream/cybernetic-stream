@@ -1,12 +1,13 @@
 name: Z build deploy 3617 Hemlock Ave Ceres, CA 95307
+name: Z build deploy 3617 Hemlock Ave Ceres, CA 95307
 on: [push]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-   defaults:
-        run:
-          working-directory: ui/web-s
+    defaults:
+      run:
+        working-directory: ui/web-s
     steps:
       - name: Checkout
         uses: actions/checkout@v3

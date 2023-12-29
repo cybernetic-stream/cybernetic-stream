@@ -23,20 +23,21 @@ async function main() {
         const filename = `../z-deploy-build-web-s-${doc.id.replaceAll(' ', '-')}.yaml`;
 
         const content = `name: Z build deploy ${doc.id}
+name: Z build deploy ${doc.id}
 on: [push]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-   defaults:
-        run:
-          working-directory: ui/web-s
+    defaults:
+      run:
+        working-directory: ui/web-s
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Rename directory
-        run: mv ui/web-s web-s-${ doc.id.replaceAll(" ", '-').toLowerCase()}
+        run: mv ui/web-s web-s-${doc.id.replaceAll(" ", '-').toLowerCase()}
 
       - name: Set up Node.js
         uses: actions/setup-node@v2

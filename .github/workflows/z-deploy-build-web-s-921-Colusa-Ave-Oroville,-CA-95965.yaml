@@ -1,12 +1,13 @@
 name: Z build deploy 921 Colusa Ave Oroville, CA 95965
+name: Z build deploy 921 Colusa Ave Oroville, CA 95965
 on: [push]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-   defaults:
-        run:
-          working-directory: ui/web-s
+    defaults:
+      run:
+        working-directory: ui/web-s
     steps:
       - name: Checkout
         uses: actions/checkout@v3
