@@ -56,7 +56,7 @@ jobs:
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
-          apiToken: \${{ secrets.WORKsERS_API_TOKEN }}
+          apiToken: \${{ secrets.WORKERS_API_TOKEN }}
           accountId: 6ce4136310d824f1913793767b70aad8
           projectName: web-s-${doc.id.replaceAll(' ', '-')}
           directory: ui/web-s/.vercel
