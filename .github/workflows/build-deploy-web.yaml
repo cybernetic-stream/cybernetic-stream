@@ -3,6 +3,9 @@ on: [push]
 jobs:
   publish:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ui/cybernetic-stream
     permissions:
       contents: read
       deployments: write
@@ -32,5 +35,4 @@ jobs:
           directory: .vercel/output/static
           gitHubToken: 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
           branch: main
-          workingDirectory: my-site
           wranglerVersion: '3'
