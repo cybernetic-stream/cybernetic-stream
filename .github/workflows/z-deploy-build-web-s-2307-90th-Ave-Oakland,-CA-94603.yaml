@@ -1,5 +1,10 @@
 name: Z build deploy 2307 90th Ave Oakland, CA 94603
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ui/web-s/**'
 
 jobs:
   deploy:

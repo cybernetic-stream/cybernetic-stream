@@ -39,7 +39,7 @@ export default function DataProvider({
       } = await import('firebase/firestore');
       const db = getFirestore(app);
 
-      onSnapshot(doc(db, 'place', process.env.NEXT_PUBLIC_PLACE), (snapshot) =>
+      onSnapshot(doc(db, 'Sublicense', process.env.NEXT_PUBLIC_PLACE), (snapshot) =>
         setPlaceData(snapshot.data())
       );
 

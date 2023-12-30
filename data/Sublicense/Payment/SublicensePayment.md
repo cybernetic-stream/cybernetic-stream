@@ -4,7 +4,7 @@
 | client_secret        | string    | processor secret for ui                               |
 | created              | timestamp |                                                       |
 | name                 | string    | payment name                                          |
-| place                | string    | Address associated with the transaction               |
+| Sublicense           | string    | Address associated with the transaction               |
 | routed               | null      | Routing information (null if not applicable)          |
 | statement_descriptor | string    | Descriptor for the transaction on statements          |
 | status               | string    | Current status of the transaction                     |

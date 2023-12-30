@@ -1,5 +1,10 @@
 name: Z build deploy 921 Colusa Ave Oroville, CA 95965
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ui/web-s/**'
 
 jobs:
   deploy:

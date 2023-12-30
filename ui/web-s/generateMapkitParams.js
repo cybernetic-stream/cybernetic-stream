@@ -31,7 +31,7 @@ async function main() {
       latitudeOffsetNarrow: -0.155 * scalar,
     };
 
-    const filePath = 'public/map101323.js';
+    const filePath = 'public/map101423.js';
 
     fs.readFile(filePath, 'utf-8', (err, content) => {
       if (err) {

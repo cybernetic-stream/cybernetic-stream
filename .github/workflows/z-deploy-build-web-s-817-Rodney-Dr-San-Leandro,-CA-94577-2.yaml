@@ -1,5 +1,10 @@
 name: Z build deploy 817 Rodney Dr San Leandro, CA 94577 2
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ui/web-s/**'
 
 jobs:
   deploy:

@@ -23,7 +23,12 @@ async function main() {
         const filename = `../z-deploy-build-web-s-${doc.id.replaceAll(' ', '-').toLowerCase()}.yaml`;
 
         const content = `name: Z build deploy ${doc.id}
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ui/web-s/**'
 
 jobs:
   deploy:
@@ -84,7 +89,6 @@ async function deleteZPrefixedFiles(directory = '../') {
   }
 }
 
-async function add
 
 deleteZPrefixedFiles().then(() => {
   main().then(() => process.exit(0));

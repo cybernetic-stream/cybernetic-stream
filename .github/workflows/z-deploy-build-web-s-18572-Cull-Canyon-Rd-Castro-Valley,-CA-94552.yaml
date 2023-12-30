@@ -1,5 +1,10 @@
 name: Z build deploy 18572 Cull Canyon Rd Castro Valley, CA 94552
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ui/web-s/**'
 
 jobs:
   deploy:

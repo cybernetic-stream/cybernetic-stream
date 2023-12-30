@@ -1,5 +1,10 @@
 name: Z build deploy 2001 E 14th St San Leandro, CA 94577
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ui/web-s/**'
 
 jobs:
   deploy:

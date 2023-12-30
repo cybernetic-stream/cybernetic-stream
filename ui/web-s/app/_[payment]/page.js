@@ -5,8 +5,8 @@ import { db } from '../../firestore.js';
 
 export async function generateStaticParams() {
   const initialActionablePaymentsSnapshot = await db
-    .collection('payment')
-    .where('place', '==', process.env.NEXT_PUBLIC_PLACE)
+    .collection('SublicensePayment')
+    .where('Sublicense', '==', process.env.NEXT_PUBLIC_PLACE)
     .where('status', 'in', ['requires_payment_method', 'requires_action'])
     .orderBy('created', 'asc')
     .get();

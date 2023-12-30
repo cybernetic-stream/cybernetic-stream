@@ -58,7 +58,7 @@ export default async function RootLayout({ children }) {
         }
       >
         <div id='map-container' className='fixed w-[100%] h-[100%]'>
-          <Script src='/map101323.js' />
+          <Script src='/map101423.js' />
         </div>{' '}
         hy
         <LayoutRect background />

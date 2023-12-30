@@ -1,5 +1,10 @@
 name: Z build deploy 10144 Boca Entrada Blvd APT 116 Boca Raton, FL 33428
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ui/web-s/**'
 
 jobs:
   deploy:
