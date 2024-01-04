@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      MY_ENV_VAR: 10144 Boca Entrada Blvd APT 116 Boca Raton, FL 33428
+      NEXT_PUBLIC_SUBLICENSE: 10144 Boca Entrada Blvd APT 116 Boca Raton, FL 33428
     defaults:
       run:
         working-directory:  web-s-10144-boca-entrada-blvd-apt-116-boca-raton-fl-33428
@@ -36,6 +36,8 @@ jobs:
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          NEXT_PUBLIC_SUBLICENSE: 10144 Boca Entrada Blvd APT 116 Boca Raton, FL 33428
+
 
       - name: Vercel Build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}

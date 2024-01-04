@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      MY_ENV_VAR: 2309 90th Ave Oakland, CA 94603
+      NEXT_PUBLIC_SUBLICENSE: 2309 90th Ave Oakland, CA 94603
     defaults:
       run:
         working-directory:  web-s-2309-90th-ave-oakland-ca-94603
@@ -36,6 +36,8 @@ jobs:
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          NEXT_PUBLIC_SUBLICENSE: 2309 90th Ave Oakland, CA 94603
+
 
       - name: Vercel Build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}

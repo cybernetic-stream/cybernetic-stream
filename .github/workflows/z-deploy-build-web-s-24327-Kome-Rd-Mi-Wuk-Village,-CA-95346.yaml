@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      MY_ENV_VAR: 24327 Kome Rd Mi-Wuk Village, CA 95346
+      NEXT_PUBLIC_SUBLICENSE: 24327 Kome Rd Mi-Wuk Village, CA 95346
     defaults:
       run:
         working-directory:  web-s-24327-kome-rd-mi-wuk-village-ca-95346
@@ -36,6 +36,8 @@ jobs:
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          NEXT_PUBLIC_SUBLICENSE: 24327 Kome Rd Mi-Wuk Village, CA 95346
+
 
       - name: Vercel Build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}

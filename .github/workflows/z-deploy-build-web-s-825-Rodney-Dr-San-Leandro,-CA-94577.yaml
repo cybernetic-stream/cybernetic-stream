@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      MY_ENV_VAR: 825 Rodney Dr San Leandro, CA 94577
+      NEXT_PUBLIC_SUBLICENSE: 825 Rodney Dr San Leandro, CA 94577
     defaults:
       run:
         working-directory:  web-s-825-rodney-dr-san-leandro-ca-94577
@@ -36,6 +36,8 @@ jobs:
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          NEXT_PUBLIC_SUBLICENSE: 825 Rodney Dr San Leandro, CA 94577
+
 
       - name: Vercel Build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
