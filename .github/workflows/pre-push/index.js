@@ -34,7 +34,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      MY_ENV_VAR: ${doc.id}
+      NEXT_PUBLIC_SUBLICENSE: ${doc.id}
     defaults:
       run:
         working-directory:  web-s-${doc.id.replaceAll(" ", '-').replaceAll(',', '').toLowerCase()}
@@ -60,6 +60,8 @@ jobs:
         env:
           VERCEL_ORG_ID: \${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: \${{ secrets.VERCEL_PROJECT_ID }}
+          NEXT_PUBLIC_SUBLICENSE: ${doc.id}
+
 
       - name: Vercel Build
         run: npx vercel build --prod --token \${{ secrets.VERCEL_TOKEN }}
