@@ -12,7 +12,6 @@ const SFMonoRegular = localFont({
   variable: '--SFMono-Regular',
   display: 'swap',
 });
-
 export const metadata = {
   title: process.env.NEXT_PUBLIC_SUBLICENSE,
   robots: {
@@ -60,7 +59,6 @@ export default async function RootLayout({ children }) {
         <div id='map-container' className='fixed w-[100%] h-[100%]'>
           <Script src='/main.js' />
         </div>
-
 
         <LayoutRect background />
         <DataProvider
