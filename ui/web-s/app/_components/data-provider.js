@@ -39,14 +39,14 @@ export default function DataProvider({
       } = await import('firebase/firestore');
       const db = getFirestore(app);
 
-      onSnapshot(doc(db, 'Sublicense', process.env.NEXT_PUBLIC_PLACE), (snapshot) =>
+      onSnapshot(doc(db, 'Sublicense', process.env.NEXT_PUBLIC_SUBLICENSE), (snapshot) =>
         setPlaceData(snapshot.data())
       );
 
       onSnapshot(
         query(
           collection(db, 'SublicensePayment'),
-          where('place', '==', process.env.NEXT_PUBLIC_PLACE),
+          where('Sublicense', '==', process.env.NEXT_PUBLIC_SUBLICENSE),
           where('status', 'in', ['requires_payment_method', 'requires_action']),
           orderBy('created', 'asc')
         ),

@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: 2300 9th Ave SW UNIT A5 Olympia, WA 98502
     defaults:
       run:
         working-directory:  web-s-2300-9th-ave-sw-unit-a5-olympia-wa-98502

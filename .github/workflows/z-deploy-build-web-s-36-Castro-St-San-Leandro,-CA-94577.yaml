@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: 36 Castro St San Leandro, CA 94577
     defaults:
       run:
         working-directory:  web-s-36-castro-st-san-leandro-ca-94577

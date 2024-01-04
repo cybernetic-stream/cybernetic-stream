@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: 1915 E 14th St San Leandro, CA 94577
     defaults:
       run:
         working-directory:  web-s-1915-e-14th-st-san-leandro-ca-94577

@@ -1,7 +1,7 @@
 # Fleet Drive State
 
-|       id      |      string          |     VIN                                   |
-|-------------|----------------|----------------------------------------|
+| id          | string         | VIN                                    |
+| ----------- | -------------- | -------------------------------------- |
 | gps_as_of   | timestamp      | last GPS update as reorted by vehicle  |
 | heading     | number         | degreees                               |
 | lattitude   | number         |                                        |

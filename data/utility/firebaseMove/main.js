@@ -1,29 +1,38 @@
-import {initializeApp, cert} from 'firebase-admin/app'
-import {getFirestore, } from "firebase-admin/firestore";
+import { initializeApp, cert } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
 
-const app = initializeApp({
+const app = initializeApp(
+  {
     credential: cert(),
-}, 'defaultApp')
+  },
+  "defaultApp",
+);
 
-const db = getFirestore(app)
+const db = getFirestore(app);
 
-const toApp = initializeApp({
+const toApp = initializeApp(
+  {
     credential: cert(),
-}, 'secondaryApp')
+  },
+  "secondaryApp",
+);
 
-const toDb = getFirestore(toApp)
-export async function transferCollection(fromColRef, toColRef = null){
-    const returnObject = {};
-   (await fromColRef.get()).forEach( elem => {
-        if (toColRef){
-            toColRef.doc(elem.id).set(elem.data())
-            console.log('set ' + elem.id)
-        }
-        returnObject[elem.id] = elem.data()
-    })
-    return returnObject;
+const toDb = getFirestore(toApp);
+export async function transferCollection(fromColRef, toColRef = null) {
+  const returnObject = {};
+  (await fromColRef.get()).forEach((elem) => {
+    if (toColRef) {
+      toColRef.doc(elem.id).set(elem.data());
+      console.log("set " + elem.id);
+    }
+    returnObject[elem.id] = elem.data();
+  });
+  return returnObject;
 }
 
-transferCollection(db.collection('FleetDriveState'), toDb.collection('FleetDriveState')).then(res => {
-    console.log(res)
-})
+transferCollection(
+  db.collection("FleetDriveState"),
+  toDb.collection("FleetDriveState"),
+).then((res) => {
+  console.log(res);
+});

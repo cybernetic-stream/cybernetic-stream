@@ -1,4 +1,4 @@
-//
+ch//
 //  SnapshotHelper.swift
 //  Example
 //
@@ -47,7 +47,7 @@ enum SnapshotError: Error, CustomDebugStringConvertible {
             return "Couldn't find simulator home location. Please, check SIMULATOR_HOST_HOME env variable."
         case .cannotRunOnPhysicalDevice:
             return "Can't use Snapshot on a physical device."
-        }
+        }Error
     }
 }
 

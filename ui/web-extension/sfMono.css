@@ -75,6 +75,6 @@
     font-family: "SF Mono";
 }
 
-p, h1, h2, h3, h4, h5, h6, .text{
+p, h1, h2, h3, h4, h5, h6, div, input,li,a,.text{
     font-family: "SF Mono" !important;
 }

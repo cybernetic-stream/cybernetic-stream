@@ -14,7 +14,7 @@ const SFMonoRegular = localFont({
 });
 
 export const metadata = {
-  title: process.env.NEXT_PUBLIC_PLACE,
+  title: process.env.NEXT_PUBLIC_SUBLICENSE,
   robots: {
     index: false,
     follow: true,
@@ -28,13 +28,13 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const placeData = (
-    await db.collection('Sublicense').doc(process.env.NEXT_PUBLIC_PLACE).get()
+    await db.collection('Sublicense').doc(process.env.NEXT_PUBLIC_SUBLICENSE).get()
   ).data();
   const initialPlaceData = { name: placeData.name };
 
   const initialActionablePaymentsSnapshot = await db
     .collection('SublicensePayment')
-    .where('Sublicense', '==', process.env.NEXT_PUBLIC_PLACE)
+    .where('Sublicense', '==', process.env.NEXT_PUBLIC_SUBLICENSE)
     .where('status', 'in', ['requires_payment_method', 'requires_action'])
     .orderBy('created', 'asc')
     .get();
@@ -58,9 +58,11 @@ export default async function RootLayout({ children }) {
         }
       >
         <div id='map-container' className='fixed w-[100%] h-[100%]'>
-          <Script src='/map101423.js' />
-        </div>{' '}
-        hy
+          <Script src='/main.js' />
+        </div>
+
+
+
         <LayoutRect background />
         <DataProvider
           initialPlaceData={initialPlaceData}

@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: 539 Blossom Way San Leandro, CA 94577 2
     defaults:
       run:
         working-directory:  web-s-539-blossom-way-san-leandro-ca-94577-2

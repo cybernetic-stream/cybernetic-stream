@@ -22,7 +22,7 @@ export default {
 		await redis.set(`last_update-${id}`, new Date().getTime());
 
 		const fleetDriveState = await getFleetDriveState(id, await redis.get(`access_token-${id}`));
-		
+
 		await Promise.allSettled([
 			await fetch(
 				`https://firestore.googleapis.com/v1/projects/projectname-o/databases/(default)/documents/FleetDriveState/${id}?` +
@@ -62,6 +62,5 @@ export default {
 };
 ///////
 //
-
 
 ///..//////

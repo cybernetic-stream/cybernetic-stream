@@ -1,16 +1,4 @@
-const config = {"latitudeDeltaDefault":0.00046658752874999997,"longitudeDeltaDefault":0.00028201219624999997,"latitudeDeltaNarrow":0.000516104675,"longitudeDeltaNarrow":0.00111860435,"latitudeDeltaShort":0.0009331770000000001,"longitudeDeltaShort":0.0005640280000000001,"latitudeOffsetShort":-0.00007400000000000001,"longitudeOffsetWide":0.000043937500000000004,"latitudeOffsetNarrow":-0.143375};
-  coordinates: [37.71402, -122.0549449],
-  unit: null,
-  latitudeDeltaDefault: 0.00050441895,
-  longitudeDeltaDefault: 0.00030487805,
-  latitudeDeltaNarrow: 0.000557951,
-  longitudeDeltaNarrow: 0.001209302,
-  latitudeDeltaShort: 0.00100884,
-  longitudeDeltaShort: 0.00060976,
-  latitudeOffsetShort: -0.00008,
-  longitudeOffsetWide: 0.0000475,
-  latitudeOffsetNarrow: -0.155,
-};
+console.log('hi')
 if (window.devicePixelRatio < 1.5) {
   window.devicePixelRatio = 1.5;
 }

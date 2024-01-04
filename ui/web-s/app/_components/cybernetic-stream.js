@@ -40,7 +40,7 @@ export default function CyberneticStream({ initialRows }) {
       const unsubscribe = onSnapshot(
         query(
           collection(db, 'SublicensePayment'),
-          where('sublicense', '==', process.env.NEXT_PUBLIC_PLACE),
+          where('sublicense', '==', process.env.NEXT_PUBLIC_SUBLICENSE),
           orderBy('created', 'desc')
         ),
         (snapshot) => {
@@ -54,8 +54,8 @@ export default function CyberneticStream({ initialRows }) {
 
             getDocs(
               query(
-                collection(db, 'payment'),
-                where('place', '==', process.env.NEXT_PUBLIC_PLACE),
+                collection(db, 'SublicensePayment'),
+                where('Sublicense', '==', process.env.NEXT_PUBLIC_SUBLICENSE),
                 orderBy('created', 'desc')
               )
             )

@@ -19,10 +19,9 @@ const app = express();
 //app.post("parse", async (req, res) => await handleParse(req, res));
 //app.get("/", async (req, res) => await handleRoot(req, res));
 
-app.get('/', async (req, res) => {
-
-  res.text('kk').send()
-})
+app.get("/", async (req, res) => {
+  res.text("kk").send();
+});
 
 app.listen(process.env.PORT, () => {
   console.log(process.env.PORT);

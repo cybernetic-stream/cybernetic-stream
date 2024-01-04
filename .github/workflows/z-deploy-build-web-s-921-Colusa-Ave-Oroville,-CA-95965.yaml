@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: 921 Colusa Ave Oroville, CA 95965
     defaults:
       run:
         working-directory:  web-s-921-colusa-ave-oroville-ca-95965

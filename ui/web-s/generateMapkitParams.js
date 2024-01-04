@@ -9,16 +9,17 @@ async function main() {
   try {
     const placeData = {
       ...(
-        await db.collection('place').doc(process.env.NEXT_PUBLIC_PLACE).get()
+        await db.collection('Sublicense').doc(process.env.NEXT_PUBLIC_SUBLICENSE).get()
       ).data(),
-      id: process.env.NEXT_PUBLIC_PLACE,
+      id: process.env.NEXT_PUBLIC_SUBLICENSE,
     };
 
     const scalar =
       placeData.id === '2300 9th Ave SW UNIT A5 Olympia, WA 98502' ? 0.925 : 1;
 
     const config = {
-      coordinates: placeData.coordinates,
+      lat: placeData.coordinates[0],
+      lng: placeData.coordinates[1],
       unit: placeData.unit,
       latitudeDeltaDefault: 0.00050441895 * scalar,
       longitudeDeltaDefault: 0.00030487805 * scalar,
@@ -31,7 +32,7 @@ async function main() {
       latitudeOffsetNarrow: -0.155 * scalar,
     };
 
-    const filePath = 'public/map101423.js';
+    const filePath = 'public/main.js';
 
     fs.readFile(filePath, 'utf-8', (err, content) => {
       if (err) {

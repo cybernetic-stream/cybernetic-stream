@@ -5,7 +5,7 @@ import { db } from '../../firestore.js';
 export default async function Page() {
   const initialPaymentsSnapshot = await db
     .collection('SublicensePayment')
-    .where('Sublicense', '==', process.env.NEXT_PUBLIC_PLACE)
+    .where('Sublicense', '==', process.env.NEXT_PUBLIC_SUBLICENSE)
     .where('status', 'in', ['requires_payment_method', 'requires_action'])
     .orderBy('created', 'desc')
     .get();

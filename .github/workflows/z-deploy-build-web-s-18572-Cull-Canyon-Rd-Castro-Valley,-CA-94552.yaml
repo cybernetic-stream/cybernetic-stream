@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: 18572 Cull Canyon Rd Castro Valley, CA 94552
     defaults:
       run:
         working-directory:  web-s-18572-cull-canyon-rd-castro-valley-ca-94552

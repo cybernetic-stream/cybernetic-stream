@@ -33,6 +33,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      MY_ENV_VAR: ${doc.id}
     defaults:
       run:
         working-directory:  web-s-${doc.id.replaceAll(" ", '-').replaceAll(',', '').toLowerCase()}
