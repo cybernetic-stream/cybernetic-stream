@@ -62,7 +62,6 @@ export default async function RootLayout({ children }) {
         </div>
 
 
-
         <LayoutRect background />
         <DataProvider
           initialPlaceData={initialPlaceData}
