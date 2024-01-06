@@ -8,15 +8,13 @@ export default {
 		const id = url.searchParams.get('id');
 		const command = url.searchParams.get('command');
 
-		let response = await sendCommand(id, command, await request.json(), await redis.get(`access_token-${id}`));
-
 		const headers = new Headers({
 			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': '*',
 		});
 
-		return new Response(JSON.stringify(await response.json()), {
+		return new Response(JSON.stringify(await sendCommand(id, command, await request.json(), await redis.get(`access_token-${id}`)), {
 			headers: headers,
-		});
+		}))
 	},
 };
