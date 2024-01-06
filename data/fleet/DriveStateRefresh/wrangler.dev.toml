@@ -1,0 +1,9 @@
+name = "fleet-drive-state-refresh"
+main = "src/index.js"
+compatibility_date = "2023-12-27"
+
+[vars]
+UPSTASH_REDIS_REST_URL='https://usw1-curious-swan-33560.upstash.io'
+UPSTASH_REDIS_REST_TOKEN='AYMYACQgNGJmYzQ5ZWEtZjI3OS00NDVlLWJmNTItMmNiOWM3OWZmY2E5ZTIwMzA0OGUwYjM1NDVlZDkwZDFhNzIxODhjNGNjOTQ='
+TESLA_CLIENT_SECRET='ta-secret.K2sD4$Y^@R14-uYH'
+GOOGLE_API_KEY='AIzaSyAfXK64bH4eilMvxBciY1u4dj7nphDsPho'

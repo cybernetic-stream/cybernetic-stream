@@ -1,20 +1,22 @@
-export default async function constructFleetDriveStateUpdate2(obj, redis) {
+import { Redis } from '@upstash/redis/cloudflare';
+
+export default async function constructFleetDriveStateUpdate2(obj, env) {
 	return {
 		fields: {
 			address: {
-				stringValue: await getAddress(obj.latitude, obj.longitude, redis),
+				stringValue: await getAddress(obj.latitude, obj.longitude, env),
 			},
 		},
 	};
 }
 
-async function getAddress(lat, long, redis) {
+async function getAddress(lat, long, env) {
 	function formatFormattedAddress(str) {
 		const upToLastComma = str.substring(0, str.lastIndexOf(','));
 		const upToLastSpace = upToLastComma.substring(0, upToLastComma.lastIndexOf(' '));
 		return upToLastSpace;
 	}
-
+	const redis = Redis.fromEnv(env)
 	const value = await redis.get(`${lat}-${long}`);
 
 	if (value) {

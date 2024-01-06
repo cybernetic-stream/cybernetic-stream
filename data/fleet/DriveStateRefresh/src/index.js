@@ -3,64 +3,41 @@ import constructFleetDriveStateUpdate2 from './constructFleetDriveStateUpdate2';
 import constructFleetDriveStateUpdate1 from './constructFleetDriveStateUpdate1';
 import getFleetDriveState from './getFleetDriveState';
 
+async function updateFirestoreDocument(id, updatePath, body) {
+    const url = `https://firestore.googleapis.com/v1/projects/projectid-x/databases/(default)/documents/FleetDriveState/${id}?${updatePath}`;
+    const headers = { 'Content-Type': 'application/json' };
+		return fetch(url, { method: 'PATCH', body: JSON.stringify(body), headers });
+}
+
 export default {
 	async fetch(request, env) {
 		const redis = Redis.fromEnv(env);
 		const { id } = await request.json();
-		const last_update = await redis.get(`last_update-${id}`);
+		const lastUpdateKey = `last_update-${id}`;
+		const last_update = await redis.get(lastUpdateKey);
+
 		const headers = new Headers({
 			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': '*',
 		});
 
 		if (parseInt(last_update) + 4000 >= Date.now()) {
-			return new Response(null, {
-				status: 202,
-				headers,
-			});
+			return new Response(null, { status: 202, headers });
+		} else {
+			await redis.set(lastUpdateKey, Date.now());
 		}
-		await redis.set(`last_update-${id}`, new Date().getTime());
 
-		const fleetDriveState = await getFleetDriveState(id, await redis.get(`access_token-${id}`));
+		const accessToken = await redis.get(`access_token-${id}`);
+		const fleetDriveState = await getFleetDriveState(id, accessToken);
 
-		await Promise.allSettled([
-			await fetch(
-				`https://firestore.googleapis.com/v1/projects/projectname-o/databases/(default)/documents/FleetDriveState/${id}?` +
-					`updateMask.fieldPaths=latitude&` +
-					`updateMask.fieldPaths=longitude&` +
-					`updateMask.fieldPaths=gps_as_of&` +
-					`updateMask.fieldPaths=shift_state&` +
-					`updateMask.fieldPaths=speed&` +
-					`updateMask.fieldPaths=heading`,
-				{
-					method: 'PATCH',
-					body: JSON.stringify(constructFleetDriveStateUpdate1(fleetDriveState)),
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				},
-			).then(async () => {
-				await redis.set(`last_update-${id}`, driveState.gps_as_of * 1000);
-			}),
+		const update1Path = `updateMask.fieldPaths=latitude&updateMask.fieldPaths=longitude&updateMask.fieldPaths=gps_as_of&updateMask.fieldPaths=shift_state&updateMask.fieldPaths=speed&updateMask.fieldPaths=heading`;
+		const update2Path = `updateMask.fieldPaths=address`;
 
-			fetch(
-				`https://firestore.googleapis.com/v1/projects/projectname-o/databases/(default)/documents/FleetDriveState/${id}?updateMask.fieldPaths=address`,
-				{
-					method: 'PATCH',
-					body: JSON.stringify(await constructFleetDriveStateUpdate2(obj, redis)),
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				},
-			),
-		]);
+		const update1Promise = updateFirestoreDocument(id, update1Path, await constructFleetDriveStateUpdate1(fleetDriveState));
+		const update2Promise = updateFirestoreDocument(id, update2Path, await constructFleetDriveStateUpdate2(fleetDriveState, env))
 
-		return new Response(null, {
-			headers,
-		});
-	},
+		await Promise.allSettled([update1Promise, update2Promise]);
+
+		return new Response(null, { headers });
+		},
 };
-///////
-//
-
-///..//////
