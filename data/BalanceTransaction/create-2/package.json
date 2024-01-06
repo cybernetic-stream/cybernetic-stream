@@ -1,0 +1,17 @@
+{
+  "name": "create-2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "ai": "^2.2.31",
+    "openai": "^4.24.1"
+  }
+}
