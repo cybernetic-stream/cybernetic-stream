@@ -24,4 +24,3 @@ jobs:
         env:
           UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
           TESLA_CLIENT_SECRET: ${{ secrets.TESLA_CLIENT_SECRET }}
-          UPSTASH_REDIS_REST_URL: 'https://usw1-curious-swan-33560.upstash.io'
