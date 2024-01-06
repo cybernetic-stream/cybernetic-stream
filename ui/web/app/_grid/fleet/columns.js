@@ -90,7 +90,7 @@ function daysFromNow(providedDate) {
 
 async function onPress(id, command) {
   return await fetch(
-    `https://fleet-command.cyberneticstream.com?id=${id}&command=${command}`,
+    `https://fleet-command.cyberneticstream.workers.dev?id=${id}&command=${command}`,
     { method: "POST", body: "{}" },
   ).then((x) => console.log(x.status));
 }

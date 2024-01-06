@@ -6,7 +6,7 @@ function refreshTelemetry(id) {
   const raw = JSON.stringify({
     id,
   });
-  fetch("https://fleet-telemetry.cyberneticstream.com", {
+  fetch("https://fleet-drive-state-refresh.cyberneticstream.workers.dev", {
     method: "POST",
     body: JSON.stringify({
       id,
