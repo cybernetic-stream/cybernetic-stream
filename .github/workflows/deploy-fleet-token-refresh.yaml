@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'data/fleet/command/**'
+      - 'data/fleet/tokenRefresh/**'
 
 jobs:
   deploy:
