@@ -29,7 +29,6 @@ export default function Index({ sublicenseInitialData, query }) {
   });
 
   useEffect(() => {
-    console.log('hi')
     console.log(queryResponseBing);
   }, [queryResponseBing]);
 
