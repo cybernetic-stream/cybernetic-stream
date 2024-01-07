@@ -4,9 +4,9 @@ import constructFleetDriveStateUpdate1 from './constructFleetDriveStateUpdate1';
 import getFleetDriveState from './getFleetDriveState';
 
 async function updateFirestoreDocument(id, updatePath, body) {
-    const url = `https://firestore.googleapis.com/v1/projects/projectid-x/databases/(default)/documents/FleetDriveState/${id}?${updatePath}`;
-    const headers = { 'Content-Type': 'application/json' };
-		return fetch(url, { method: 'PATCH', body: JSON.stringify(body), headers });
+	const url = `https://firestore.googleapis.com/v1/projects/projectid-x/databases/(default)/documents/FleetDriveState/${id}?${updatePath}`;
+	const headers = { 'Content-Type': 'application/json' };
+	return fetch(url, { method: 'PATCH', body: JSON.stringify(body), headers });
 }
 
 export default {
@@ -34,10 +34,10 @@ export default {
 		const update2Path = `updateMask.fieldPaths=address`;
 
 		const update1Promise = updateFirestoreDocument(id, update1Path, await constructFleetDriveStateUpdate1(fleetDriveState));
-		const update2Promise = updateFirestoreDocument(id, update2Path, await constructFleetDriveStateUpdate2(fleetDriveState, env))
+		const update2Promise = updateFirestoreDocument(id, update2Path, await constructFleetDriveStateUpdate2(fleetDriveState, env));
 
 		await Promise.allSettled([update1Promise, update2Promise]);
 
 		return new Response(null, { headers });
-		},
+	},
 };

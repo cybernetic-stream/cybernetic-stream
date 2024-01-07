@@ -16,7 +16,7 @@ async function getAddress(lat, long, env) {
 		const upToLastSpace = upToLastComma.substring(0, upToLastComma.lastIndexOf(' '));
 		return upToLastSpace;
 	}
-	const redis = Redis.fromEnv(env)
+	const redis = Redis.fromEnv(env);
 	const value = await redis.get(`${lat}-${long}`);
 
 	if (value) {

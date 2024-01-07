@@ -13,8 +13,10 @@ export default {
 			'Access-Control-Allow-Origin': '*',
 		});
 
-		return new Response(JSON.stringify(await sendCommand(id, command, await request.json(), await redis.get(`access_token-${id}`)), {
-			headers: headers,
-		}))
+		return new Response(
+			JSON.stringify(await sendCommand(id, command, await request.json(), await redis.get(`access_token-${id}`)), {
+				headers: headers,
+			}),
+		);
 	},
 };

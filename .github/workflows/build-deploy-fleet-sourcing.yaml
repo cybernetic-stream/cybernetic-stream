@@ -39,15 +39,19 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: ghcr.io/${{ github.repository }}/sourcing-app:latest
+          build-args: |
+            ADESA_PASSWORD=${{ secrets.ADESA_PASSWORD }}
+            GCP_SERVICE_ACCOUNT=${{ secrets.GCP_SERVICE_ACCOUNT }}
+            R2_SECRET_ACCESS_KEY=${{ secrets.R2_SECRET_ACCESS_KEY }}
 
-      - name: Build and push to Docker Hub
-        uses: docker/build-push-action@v2
-        with:
-          context: ./data/fleet/Sourcing
-          file: ./data/fleet/Sourcing/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
-          push: true
-          tags: docker.io/usernamex36/sourcing-app:latest
+#      - name: Build and push to Docker Hub
+#        uses: docker/build-push-action@v2
+#        with:
+#          context: ./data/fleet/Sourcing
+#          file: ./data/fleet/Sourcing/Dockerfile
+#          platforms: linux/amd64,linux/arm64,linux/arm/v7
+#          push: true
+#          tags: docker.io/usernamex36/sourcing-app:latest
 
 #      # Set up Google Cloud CLI
 #      - name: Set up Google Cloud
