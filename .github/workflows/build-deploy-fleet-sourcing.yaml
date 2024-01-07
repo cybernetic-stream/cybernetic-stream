@@ -37,11 +37,16 @@ jobs:
             GCP_SERVICE_ACCOUNT=${{ secrets.GCP_SERVICE_ACCOUNT }}
             R2_SECRET_ACCESS_KEY=${{ secrets.R2_SECRET_ACCESS_KEY }}
 
+      # Authenticate with Google Cloud
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v0.4.0
+        with:
+          credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
       # Set up Google Cloud CLI
       - name: Set up Google Cloud
         uses: google-github-actions/setup-gcloud@v2.0.1
         with:
-          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT }}
           project_id: projectid-x
 
       # Configure Docker to use the gcloud command-line tool as a credential helper
