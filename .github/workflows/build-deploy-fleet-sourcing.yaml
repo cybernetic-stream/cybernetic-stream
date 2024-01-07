@@ -39,7 +39,7 @@ jobs:
 
       # Set up Google Cloud CLI
       - name: Set up Google Cloud
-        uses: google-github-actions/setup-gcloud
+        uses: google-github-actions/setup-gcloud@v2.0.1
         with:
           service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT }}
           project_id: projectid-x
