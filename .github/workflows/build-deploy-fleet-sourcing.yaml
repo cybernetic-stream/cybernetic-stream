@@ -17,13 +17,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-#      - name: Login to GitHub Container Registry
-#        uses: docker/login-action@v1
-#        with:
-#          registry: ghcr.io
-#          username: ${{ github.actor }}
-#          password: ${{ secrets.GHCR_TOKEN }}
-
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -31,25 +24,12 @@ jobs:
           username: usernamex36
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-#      - name: Build and push to GitHub Container Registry
-#        uses: docker/build-push-action@v2
-#        with:
-#          context: ./data/fleet/Sourcing
-#          file: ./data/fleet/Sourcing/Dockerfile
-#          platforms: linux/amd64,linux/arm64,linux/arm/v7
-#          push: true
-#          tags: ghcr.io/${{ github.repository }}/sourcing-app:latest
-#          build-args: |
-#            ADESA_PASSWORD=${{ secrets.ADESA_PASSWORD }}
-#            GCP_SERVICE_ACCOUNT=${{ secrets.GCP_SERVICE_ACCOUNT }}
-#            R2_SECRET_ACCESS_KEY=${{ secrets.R2_SECRET_ACCESS_KEY }}
-
       - name: Build and push to Docker Hub
         uses: docker/build-push-action@v2
         with:
           context: ./data/fleet/Sourcing
           file: ./data/fleet/Sourcing/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64
           push: true
           tags: docker.io/usernamex36/sourcing-app:latest
           build-args: |
