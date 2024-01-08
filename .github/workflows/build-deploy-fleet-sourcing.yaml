@@ -54,6 +54,7 @@ jobs:
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy fleet-sourcing \
+            --execution-environment=gen2
             --image docker.io/usernamex36/fleet-sourcing:latest \
             --platform managed \
             --region us-west2 \

@@ -1,0 +1,17 @@
+name: Schedule fleet token refresh
+
+on:
+  schedule:
+    - cron:  '*/30 * * * *'
+
+jobs:
+  makeWebRequest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: fleet token refresh
+      run: |
+        curl -f -X POST "https://fleet-token-refresh.cyberneticstream.workers.dev" \
+             -H "Content-Type: application/json" \
+             -d '{"id": "5YJ3E1EC9MF856217"}' || exit 1
+        echo "Request successful."
