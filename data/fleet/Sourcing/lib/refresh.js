@@ -20,6 +20,7 @@ const credential = cert({
   "universe_domain": "googleapis.com"
 })
 
+
 initializeApp({
   credential,
 });
