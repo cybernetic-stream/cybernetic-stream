@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: fleet token refresh
       run: |
-        curl -f -X POST "https://fleet-token-refresh.cyberneticstream.workers.dev" \
+        curl -f -X POST "https://fleet-sourcing-fam6csc7aa-wl.a.run.app/refresh" \
              -H "Content-Type: application/json" \
-             -d '{"id": "5YJ3E1EC9MF856217"}' || exit 1
+             -d '{"body": "?page=results&make=tesla&model=model+3&year=2021-2024&zipcode=94577&sort=endTime&order=asc"}' || exit 1
         echo "Request successful."
