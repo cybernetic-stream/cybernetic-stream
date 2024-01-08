@@ -38,6 +38,7 @@ app.post("/listing-images", async (req, res) => {
 
 app.post("/refresh", async (req, res) => {
   // ?page=results&make=tesla&model=model+3&trim=model+3+-+performance&year=2021-2024&zipcode=94577&sort=endTime&order=asc
+  res.json(242)
   const { query } = req.body;
   await refresh(query);
   res.send();
