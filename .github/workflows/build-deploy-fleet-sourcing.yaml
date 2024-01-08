@@ -60,6 +60,7 @@ jobs:
             --region us-west2 \
             --memory 32Gi \
             --cpu 8 \
+            --max-instances 1 \
             --allow-unauthenticated \
             --execution-environment gen2 \
             --cpu-boost
