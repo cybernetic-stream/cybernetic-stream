@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: windows
+    runs-on: glendenning-barn
     defaults:
       run:
         working-directory: ui/web
