@@ -5,8 +5,6 @@ import { getFirestore, Timestamp } from "firebase-admin/firestore";
 import listingImages from "./listingImages.js";
 import listing from "./listing.js";
 
-
-
 initializeApp({
   credential: cert({
     "type": "service_account",
