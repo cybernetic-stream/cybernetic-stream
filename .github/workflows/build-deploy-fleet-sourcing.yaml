@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'data/fleet/Sourcing/**'
+#    paths:
+#      - 'data/fleet/Sourcing/**'
 
 jobs:
   build-and-push:
@@ -58,7 +58,8 @@ jobs:
             --image docker.io/usernamex36/fleet-sourcing:latest \
             --platform managed \
             --region us-west2 \
-            --memory 2Gi \
+            --memory 32Gi \
+            --cpu 8 \
             --allow-unauthenticated \
             --execution-environment gen2 \
             --cpu-boost
