@@ -58,7 +58,7 @@ jobs:
             --image docker.io/usernamex36/fleet-sourcing:latest \
             --platform managed \
             --region us-west2 \
-            --memory 1Gi \
+            --memory 2Gi \
             --allow-unauthenticated \
             --execution-environment gen2 \
             --cpu-boost
