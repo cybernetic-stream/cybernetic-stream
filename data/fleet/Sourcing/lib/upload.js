@@ -9,7 +9,7 @@ export default async function upload(content, key) {
     region: "auto",
     credentials: {
       accessKeyId: '4aaf8dc5084920cd6dcf32c2f04e8edf',
-      secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
+      secretAccessKey: 'b25156e5c0b5aaa0de3dbf55d2386ee5fccdf46443e6513c11796465e2948739',
     },
   });
 
