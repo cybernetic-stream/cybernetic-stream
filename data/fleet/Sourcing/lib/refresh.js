@@ -6,7 +6,7 @@ import listingImages from "./listingImages.js";
 import listing from "./listing.js";
 
 initializeApp({
-  credential: cert(process.env.GCP_SERVICE_ACCOUNT),
+  credential: cert(JSON.parse(process.env.GCP_SERVICE_ACCOUNT)),
 });
 
 const db = getFirestore();

@@ -43,13 +43,6 @@ app.post("/refresh", async (req, res) => {
   res.send();
 });
 
-app.post("/", async (req, res) => {
-  // ?page=results&make=tesla&model=model+3&trim=model+3+-+performance&year=2021-2024&zipcode=94577&sort=endTime&order=asc
-  const { query } = req.body;
-  await refresh(query);
-  res.send();
-});
-
 app.listen(process.env.PORT, () => {
   console.log(process.env.PORT);
 });
