@@ -2,8 +2,8 @@ name: Schedule fleet sourcing refresh
 
 on:
   schedule:
+    # * is a special character in YAML so you have to quote this string
     - cron:  '* * * * *'
-
 jobs:
   makeWebRequest:
     runs-on: ubuntu-latest
