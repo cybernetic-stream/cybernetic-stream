@@ -4,3 +4,4 @@ export default async function adesaLogin(page) {
   await page.type("#password", 'NE7*p3!hNzKcbkgfL4mB');
   await page.click("#loginSubmit");
 }
+//
