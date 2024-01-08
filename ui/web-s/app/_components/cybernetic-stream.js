@@ -40,7 +40,7 @@ export default function CyberneticStream({ initialRows }) {
       const unsubscribe = onSnapshot(
         query(
           collection(db, 'SublicensePayment'),
-          where('sublicense', '==', process.env.NEXT_PUBLIC_SUBLICENSE),
+          where('Sublicense', '==', process.env.NEXT_PUBLIC_SUBLICENSE),
           orderBy('created', 'desc')
         ),
         (snapshot) => {
@@ -51,7 +51,6 @@ export default function CyberneticStream({ initialRows }) {
 
           if (firstListenerUpdate.current) {
             const newRows = toDataGridRows(update);
-
             getDocs(
               query(
                 collection(db, 'SublicensePayment'),
