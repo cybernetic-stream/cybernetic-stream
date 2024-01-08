@@ -1,4 +1,4 @@
-FROM node:slim
+FROM node:slim as APP
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 ENV IS_CONTAINER true
