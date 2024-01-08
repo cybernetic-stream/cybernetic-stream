@@ -24,14 +24,14 @@ jobs:
           username: usernamex36
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-#      - name: Build and push to Docker Hub
-#        uses: docker/build-push-action@v2
-#        with:
-#          context: ./data/fleet/Sourcing
-#          file: ./data/fleet/Sourcing/Dockerfile
-#          platforms: linux/amd64
-#          push: true
-#          tags: docker.io/usernamex36/fleet-sourcing:latest
+      - name: Build and push to Docker Hub
+        uses: docker/build-push-action@v2
+        with:
+          context: ./data/fleet/Sourcing
+          file: ./data/fleet/Sourcing/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: docker.io/usernamex36/fleet-sourcing:latest
 
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2.0.0
