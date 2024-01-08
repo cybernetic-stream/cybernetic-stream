@@ -1,16 +1,13 @@
 name: Deploy to Vercel
-#nam
 
 on:
   push:
     branches:
       - main
-    paths:
-      - "ui/web/**"
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: glendenning-barn
     defaults:
       run:
         working-directory: ui/web
@@ -28,10 +25,10 @@ jobs:
         run: npm install
 
       - name: Vercel Project Settings
-        run: vercel pull --yes --scope teamname-x --environment=production --token ${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --scope teamname-x --environment=production --token 9pn9KTktQJIhMKlpIrGsc8jP
         env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: team_APNcR292HbqUMJaZj8c0zvXx
+          VERCEL_PROJECT_ID: teamname-x
 
       - name: Vercel Build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
