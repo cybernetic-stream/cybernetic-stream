@@ -1,8 +1,9 @@
+
 name: Schedule fleet token refresh
 
 on:
   schedule:
-    - cron:  '* * * * *'
+    - cron:  '0 */4 * * *'
 
 jobs:
   makeWebRequest:
