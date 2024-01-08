@@ -14,6 +14,6 @@ jobs:
           curl --location -f -X POST "https://fleet-sourcing-fam6csc7aa-wl.a.run.app/refresh" \
                -H "Content-Type: application/json" \
                -d '{
-                   "query": "?page=results&make=tesla&model=model+3&year=2021-2025&zipcode=94577&trim=model+3+-+performance&sort=endTime&order=asc"
+                   "query": "?page=results&make=tesla&model=model+3&year=2021-2025&zipcode=94577&sort=endTime&order=asc"
                }' || exit 1
           echo "Request successful."
