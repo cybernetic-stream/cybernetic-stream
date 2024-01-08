@@ -1,4 +1,4 @@
-name: Schedule fleet token refresh
+name: Schedule fleet sourcing refresh
 
 on:
   schedule:
