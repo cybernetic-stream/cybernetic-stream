@@ -16,12 +16,12 @@ export default function CyberneticStream({ initialRows }) {
   useEffect(() => {
     const paymentsListener = async () => {
       const firebaseConfig = {
-        apiKey: "AIzaSyAsxlVoVu08VZJpI2bzdYUruuQafQZyg3M",
-        authDomain: "projectid-x.firebaseapp.com",
-        projectId: "projectid-x",
-        storageBucket: "projectid-x.appspot.com",
-        messagingSenderId: "211384317349",
-        appId: "1:211384317349:web:d3d7253dd24942e695244c"
+        apiKey: 'AIzaSyAsxlVoVu08VZJpI2bzdYUruuQafQZyg3M',
+        authDomain: 'projectid-x.firebaseapp.com',
+        projectId: 'projectid-x',
+        storageBucket: 'projectid-x.appspot.com',
+        messagingSenderId: '211384317349',
+        appId: '1:211384317349:web:d3d7253dd24942e695244c',
       };
 
       const { initializeApp } = await import('firebase/app');

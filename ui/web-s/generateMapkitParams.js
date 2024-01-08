@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import fs from 'fs';
-import {db} from './firestore.js'
+import { db } from './firestore.js';
 
 dotenv.config();
 dotenv.config({ path: './.env.local.local', override: true });
@@ -9,7 +9,10 @@ async function main() {
   try {
     const placeData = {
       ...(
-        await db.collection('Sublicense').doc(process.env.NEXT_PUBLIC_SUBLICENSE).get()
+        await db
+          .collection('Sublicense')
+          .doc(process.env.NEXT_PUBLIC_SUBLICENSE)
+          .get()
       ).data(),
       id: process.env.NEXT_PUBLIC_SUBLICENSE,
     };

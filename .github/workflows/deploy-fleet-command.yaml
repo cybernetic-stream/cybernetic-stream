@@ -5,14 +5,14 @@ on:
     branches:
       - main
     paths:
-      - 'data/fleet/command/**'
+      - "data/fleet/command/**"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-        
+
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:

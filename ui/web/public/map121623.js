@@ -554,15 +554,15 @@ window.initMap = () => {
                     (t =
                       "Initialization failed because the daily usage limit has exceeded."))
                   : 0 === i
-                  ? ((r = k.NetworkError),
-                    (t = "Initialization failed because of network error."))
-                  : ((r = k.Unknown),
-                    (t =
-                      "Initialization failed because the server-trigger returned error " +
-                      i +
-                      " (" +
-                      e.statusText +
-                      ")."));
+                    ? ((r = k.NetworkError),
+                      (t = "Initialization failed because of network error."))
+                    : ((r = k.Unknown),
+                      (t =
+                        "Initialization failed because the server-trigger returned error " +
+                        i +
+                        " (" +
+                        e.statusText +
+                        ")."));
               return this._loadFailed(r, t), !0;
             },
             _getClientLanguage: function () {
@@ -1195,13 +1195,13 @@ window.initMap = () => {
                 ? n.prototype._reload.call(this, e.target)
                 : this.loaderDidFail(e.target)
               : "load" === e.type
-              ? this.loaderDidSucceed(e.target)
-              : console.log(
-                  "Unhandled XHR event type:",
-                  e.type,
-                  " status:",
-                  e.target.status,
-                );
+                ? this.loaderDidSucceed(e.target)
+                : console.log(
+                    "Unhandled XHR event type:",
+                    e.type,
+                    " status:",
+                    e.target.status,
+                  );
           },
         })),
           (e.exports = a);
@@ -1221,8 +1221,8 @@ window.initMap = () => {
             return this.region
               ? e + "-" + this.region
               : this.script
-              ? e + "-" + this.script
-              : e;
+                ? e + "-" + this.script
+                : e;
           },
           toString: function () {
             var e = "{ language: " + this.language;
@@ -2050,19 +2050,19 @@ window.initMap = () => {
                 ? ((this._baseUrl = n.distUrl),
                   (this._versionSuffix = "?mkjsVersion=" + i.cdnVersion))
                 : i.useLocalResources
-                ? (void 0 === this.scriptBaseUrl &&
-                    this.findScriptAndSetBasePath(),
-                  (this._baseUrl = this.scriptBaseUrl),
-                  (this._versionSuffix = "?mkjsVersion=" + i.cdnVersion))
-                : n.proxyPrefixes
-                ? (this._baseUrl =
-                    n.proxyPrefixes[0] +
-                    [i.cdnBase, "mk", i.cdnVersion].join("/"))
-                : (this._baseUrl = [
-                    "https:" + i.cdnBase,
-                    "mk",
-                    i.cdnVersion,
-                  ].join("/"));
+                  ? (void 0 === this.scriptBaseUrl &&
+                      this.findScriptAndSetBasePath(),
+                    (this._baseUrl = this.scriptBaseUrl),
+                    (this._versionSuffix = "?mkjsVersion=" + i.cdnVersion))
+                  : n.proxyPrefixes
+                    ? (this._baseUrl =
+                        n.proxyPrefixes[0] +
+                        [i.cdnBase, "mk", i.cdnVersion].join("/"))
+                    : (this._baseUrl = [
+                        "https:" + i.cdnBase,
+                        "mk",
+                        i.cdnVersion,
+                      ].join("/"));
             }
             return (
               (e = (e && e.replace(/^\//, "")) || ""),
@@ -2140,60 +2140,60 @@ window.initMap = () => {
       479 === e
         ? "libs/mapkit.core.3f86cd.js"
         : 666 === e
-        ? "libs/mapkit.core.6f6772.js"
-        : 863 === e
-        ? "libs/mapkit.core.62decf.js"
-        : 106 === e
-        ? "libs/mapkit.core.cc6ab2.js"
-        : 233 === e
-        ? "libs/mapkit.core.9c471b.js"
-        : 993 === e
-        ? "libs/mapkit.core.e43534.js"
-        : 894 === e
-        ? "libs/mapkit.core.services.ea1493.js"
-        : 840 === e
-        ? "libs/mapkit.core.376a44.js"
-        : 90 === e
-        ? "libs/mapkit.core.36fbd8.js"
-        : 842 === e
-        ? "libs/mapkit.core.map.e577c9.js"
-        : 415 === e
-        ? "libs/mapkit.core.97b600.js"
-        : 559 === e
-        ? "libs/mapkit.core.a674f2.js"
-        : 574 === e
-        ? "libs/mapkit.core.f54f0f.js"
-        : 614 === e
-        ? "libs/mapkit.core.9a16d7.js"
-        : 343 === e
-        ? "libs/mapkit.core.annotations.46bf87.js"
-        : 15 === e
-        ? "libs/mapkit.core.7aefdf.js"
-        : 277 === e
-        ? "libs/mapkit.core.overlays.5e3336.js"
-        : 816 === e
-        ? "libs/mapkit.core.user-location.30b97d.js"
-        : 843 === e
-        ? "libs/mapkit.core.full-map.40a73e.js"
-        : 346 === e
-        ? "libs/mapkit.core.geojson.4ce760.js"
-        : 170 === e
-        ? "libs/mapkit.core.legacy.9b08e2.js"
-        : 208 === e
-        ? "libs/mapkit.core.spi.418284.js"
-        : 962 === e
-        ? "libs/mapkit.core.spi-unhuj6.45330a.js"
-        : 134 === e
-        ? "libs/mapkit.core.spi-avdwqh.09e70c.js"
-        : 319 === e
-        ? "libs/mapkit.core.spi-drejcy.be57f7.js"
-        : 411 === e
-        ? "libs/mapkit.core.6b649d.js"
-        : 101 === e
-        ? "libs/mapkit.core.spi-7my8sd.a21aea.js"
-        : 572 === e
-        ? "libs/mapkit.core.8a1f3f.js"
-        : void 0),
+          ? "libs/mapkit.core.6f6772.js"
+          : 863 === e
+            ? "libs/mapkit.core.62decf.js"
+            : 106 === e
+              ? "libs/mapkit.core.cc6ab2.js"
+              : 233 === e
+                ? "libs/mapkit.core.9c471b.js"
+                : 993 === e
+                  ? "libs/mapkit.core.e43534.js"
+                  : 894 === e
+                    ? "libs/mapkit.core.services.ea1493.js"
+                    : 840 === e
+                      ? "libs/mapkit.core.376a44.js"
+                      : 90 === e
+                        ? "libs/mapkit.core.36fbd8.js"
+                        : 842 === e
+                          ? "libs/mapkit.core.map.e577c9.js"
+                          : 415 === e
+                            ? "libs/mapkit.core.97b600.js"
+                            : 559 === e
+                              ? "libs/mapkit.core.a674f2.js"
+                              : 574 === e
+                                ? "libs/mapkit.core.f54f0f.js"
+                                : 614 === e
+                                  ? "libs/mapkit.core.9a16d7.js"
+                                  : 343 === e
+                                    ? "libs/mapkit.core.annotations.46bf87.js"
+                                    : 15 === e
+                                      ? "libs/mapkit.core.7aefdf.js"
+                                      : 277 === e
+                                        ? "libs/mapkit.core.overlays.5e3336.js"
+                                        : 816 === e
+                                          ? "libs/mapkit.core.user-location.30b97d.js"
+                                          : 843 === e
+                                            ? "libs/mapkit.core.full-map.40a73e.js"
+                                            : 346 === e
+                                              ? "libs/mapkit.core.geojson.4ce760.js"
+                                              : 170 === e
+                                                ? "libs/mapkit.core.legacy.9b08e2.js"
+                                                : 208 === e
+                                                  ? "libs/mapkit.core.spi.418284.js"
+                                                  : 962 === e
+                                                    ? "libs/mapkit.core.spi-unhuj6.45330a.js"
+                                                    : 134 === e
+                                                      ? "libs/mapkit.core.spi-avdwqh.09e70c.js"
+                                                      : 319 === e
+                                                        ? "libs/mapkit.core.spi-drejcy.be57f7.js"
+                                                        : 411 === e
+                                                          ? "libs/mapkit.core.6b649d.js"
+                                                          : 101 === e
+                                                            ? "libs/mapkit.core.spi-7my8sd.a21aea.js"
+                                                            : 572 === e
+                                                              ? "libs/mapkit.core.8a1f3f.js"
+                                                              : void 0),
     (n.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
     (e = {}),
     (t = "mapkit:"),

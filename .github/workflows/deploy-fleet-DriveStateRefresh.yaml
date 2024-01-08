@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'data/fleet/DriveStateRefresh/**'
+      - "data/fleet/DriveStateRefresh/**"
 
 jobs:
   deploy:
@@ -24,4 +24,3 @@ jobs:
         env:
           UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          

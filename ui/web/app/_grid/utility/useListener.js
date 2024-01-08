@@ -30,7 +30,7 @@ export default function useListener({
           projectId: "projectid-x",
           storageBucket: "projectid-x.appspot.com",
           messagingSenderId: "211384317349",
-          appId: "1:211384317349:web:d3d7253dd24942e695244c"
+          appId: "1:211384317349:web:d3d7253dd24942e695244c",
         });
       } else {
         app = getApps()[0];

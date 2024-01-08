@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'ui/web-s/**'
+      - "ui/web-s/**"
 
 jobs:
   deploy:
@@ -13,11 +13,10 @@ jobs:
       NEXT_PUBLIC_SUBLICENSE: 825 Rodney Dr San Leandro, CA 94577
     defaults:
       run:
-        working-directory:  web-s-825-rodney-dr-san-leandro-ca-94577
+        working-directory: web-s-825-rodney-dr-san-leandro-ca-94577
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
 
       - name: Rename directory
         run: mv ui/web-s web-s-825-rodney-dr-san-leandro-ca-94577
@@ -26,7 +25,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '21'
+          node-version: "21"
 
       - name: Install dependencies
         run: npm install
@@ -37,7 +36,6 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           NEXT_PUBLIC_SUBLICENSE: 825 Rodney Dr San Leandro, CA 94577
-
 
       - name: Vercel Build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}

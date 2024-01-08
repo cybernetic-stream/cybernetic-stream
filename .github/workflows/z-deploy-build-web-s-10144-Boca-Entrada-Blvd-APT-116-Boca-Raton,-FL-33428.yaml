@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'ui/web-s/**'
+      - "ui/web-s/**"
 
 jobs:
   deploy:
@@ -13,11 +13,10 @@ jobs:
       NEXT_PUBLIC_SUBLICENSE: 10144 Boca Entrada Blvd APT 116 Boca Raton, FL 33428
     defaults:
       run:
-        working-directory:  web-s-10144-boca-entrada-blvd-apt-116-boca-raton-fl-33428
+        working-directory: web-s-10144-boca-entrada-blvd-apt-116-boca-raton-fl-33428
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
 
       - name: Rename directory
         run: mv ui/web-s web-s-10144-boca-entrada-blvd-apt-116-boca-raton-fl-33428
@@ -26,7 +25,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '21'
+          node-version: "21"
 
       - name: Install dependencies
         run: npm install
@@ -37,7 +36,6 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           NEXT_PUBLIC_SUBLICENSE: 10144 Boca Entrada Blvd APT 116 Boca Raton, FL 33428
-
 
       - name: Vercel Build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}

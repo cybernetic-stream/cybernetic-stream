@@ -10,7 +10,7 @@ export default async function listingImages(url) {
 
   const unitId = new URL(url).pathname.match(/\/listing\/(\d+)\//)[1];
 
-  for (var i = 0; i < images.length; i++) {
+  for (let i = 0; i < images.length; i++) {
     returnArray.push(
       await upload(
         await fetch(

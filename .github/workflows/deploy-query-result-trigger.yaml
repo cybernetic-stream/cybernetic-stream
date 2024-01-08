@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'data/QueryResult/trigger/**'
+      - "data/QueryResult/trigger/**"
 
 jobs:
   deploy:
@@ -22,4 +22,4 @@ jobs:
             UPSTASH_REDIS_REST_TOKEN
         env:
           UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
-          UPSTASH_REDIS_REST_URL: 'https://usw1-curious-swan-33560.upstash.io'
+          UPSTASH_REDIS_REST_URL: "https://usw1-curious-swan-33560.upstash.io"

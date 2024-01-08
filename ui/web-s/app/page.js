@@ -5,7 +5,10 @@ import { db } from '../firestore.js';
 
 export default async function Page() {
   const name = (
-    await db.collection('Sublicense').doc(process.env.NEXT_PUBLIC_SUBLICENSE).get()
+    await db
+      .collection('Sublicense')
+      .doc(process.env.NEXT_PUBLIC_SUBLICENSE)
+      .get()
   ).data().name;
 
   const links = [

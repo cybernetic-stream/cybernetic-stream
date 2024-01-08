@@ -27,7 +27,10 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const placeData = (
-    await db.collection('Sublicense').doc(process.env.NEXT_PUBLIC_SUBLICENSE).get()
+    await db
+      .collection('Sublicense')
+      .doc(process.env.NEXT_PUBLIC_SUBLICENSE)
+      .get()
   ).data();
   const initialPlaceData = { name: placeData.name };
 

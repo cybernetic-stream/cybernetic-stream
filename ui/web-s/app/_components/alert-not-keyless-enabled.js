@@ -1,19 +1,14 @@
 'use client';
-import { useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
-export default function AlertNotKeylessEnabled(){
-  const [shown, setShown] = useState(false)
+export default function AlertNotKeylessEnabled() {
+  const [shown, setShown] = useState(false);
   useEffect(() => {
-
-    if(!shown){
-      alert('not yet keyless enabled')
-      setShown(true)
+    if (!shown) {
+      alert('not yet keyless enabled');
+      setShown(true);
     }
+  }, []);
 
-
-  }, [])
-
-  return (
-    <></>
-  )
+  return <></>;
 }
