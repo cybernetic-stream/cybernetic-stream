@@ -50,6 +50,16 @@ jobs:
         run: |
           gcloud auth configure-docker
 
+      - name: Print Environment Variables and Their Types
+        env:
+          ADESA_PASSWORD: ${{ secrets.ADESA_PASSWORD }}
+          GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          echo "Type of ADESA_PASSWORD: ${ADESA_PASSWORD:+[hidden]}"
+          echo "Type of GCP_SERVICE_ACCOUNT: ${GCP_SERVICE_ACCOUNT:+[hidden]}"
+          echo "Type of R2_SECRET_ACCESS_KEY: ${R2_SECRET_ACCESS_KEY:+[hidden]}"
+
       # Deploy to Google Cloud Run
       - name: Deploy to Cloud Run
         env:
