@@ -26,9 +26,9 @@ jobs:
 
       - name: Vercel Project Settings
         run: vercel pull --yes --scope teamname-x --environment=production --token 9pn9KTktQJIhMKlpIrGsc8jP
-        env:
-          VERCEL_ORG_ID: team_APNcR292HbqUMJaZj8c0zvXx
-          VERCEL_PROJECT_ID: teamname-x
+#        env:
+#          VERCEL_ORG_ID: team_APNcR292HbqUMJaZj8c0zvXx
+#          VERCEL_PROJECT_ID: web
 
       - name: Vercel Build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
