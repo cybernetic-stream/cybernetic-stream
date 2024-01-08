@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: fleet token refresh
+    - name: fleet sourcing refresh
       run: |
         curl -f -X POST "https://fleet-sourcing-fam6csc7aa-wl.a.run.app/refresh" \
              -H "Content-Type: application/json" \
