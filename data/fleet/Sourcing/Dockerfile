@@ -1,7 +1,7 @@
 FROM node:slim
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
-
+ENV IS_CONTAINER true
 
 # Install Google Chrome Stable and fonts
 # Note: this installs the necessary libs to make the browser work with Puppeteer.
