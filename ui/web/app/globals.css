@@ -10,7 +10,7 @@
 html {
   scrollbar-width: none !important; /* Hide scrollbar for Firefox (and other Gecko browsers) */
   -ms-overflow-style: none !important; /* Hide scrollbar for IE and Edge */
-  background-color: black !important;
+  background-color: orange !important;
 }
 
 .mk-controls-container {
