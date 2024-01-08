@@ -31,7 +31,7 @@ jobs:
 #          VERCEL_PROJECT_ID: web
 
       - name: Vercel Build
-        run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel build --prod --token 9pn9KTktQJIhMKlpIrGsc8jP
 
       - name: Vercel Deploy
-        run: npx vercel deploy --prebuilt --token ${{ secrets.VERCEL_TOKEN }} --prod
+        run: npx vercel deploy --prebuilt --token 9pn9KTktQJIhMKlpIrGsc8jP --prod
