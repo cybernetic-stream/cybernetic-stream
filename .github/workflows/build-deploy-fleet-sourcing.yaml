@@ -58,7 +58,7 @@ jobs:
             --image docker.io/usernamex36/fleet-sourcing:latest \
             --platform managed \
             --region us-west2 \
-            --memory 32Gi \
+            --memory 4Gi \
             --cpu 8 \
             --max-instances 1 \
             --allow-unauthenticated \
