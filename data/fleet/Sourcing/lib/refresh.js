@@ -13,7 +13,7 @@ if (process.env.IS_CONTAINER) {
   let buffer = Buffer.from(gcpServiceAccount, 'base64');
   gcpServiceAccount = buffer.toString('utf-8');
 }
-
+console.log('is container')
 console.log(process.env.IS_CONTAINER)
 
 initializeApp({
