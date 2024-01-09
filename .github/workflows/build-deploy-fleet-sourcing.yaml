@@ -11,6 +11,9 @@ jobs:
   build-and-push:
     runs-on: glendenning-barn
     steps:
+      - name: Print GCP Service Account (Be cautious with secrets!)
+        run: echo "GCP Service Account: ${{ secrets.GCP_SERVICE_ACCOUNT }}"
+
       - name: Checkout code
         uses: actions/checkout@v2
 
