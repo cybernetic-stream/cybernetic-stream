@@ -52,7 +52,7 @@ jobs:
 
       - name: deploy
         run: |
-          gcloud run deploy fleet-sourcing \
+          gcloud run deploy utility-collection-http-trigger \
             --execution-environment=gen2 \
             --image docker.io/usernamex36/utility-collection-http-trigger:${{ env.IMAGE_TAG }} \
             --platform managed \
