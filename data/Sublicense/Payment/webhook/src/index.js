@@ -2,7 +2,7 @@ export default {
 	async fetch(request, env) {
 		const body = await request.json();
 		if (body.type.includes('payment_intent')) {
-			if (typeof body.data.object.metadata.place === 'undefined' || typeof body.data.object.metadata.name === 'undefined') {
+			if (typeof body.data.object.metadata.Sublicense === 'undefined' || typeof body.data.object.metadata.name === 'undefined') {
 				return new Response(null, { status: 202 });
 			}
 			const document = {
@@ -19,8 +19,8 @@ export default {
 					name: {
 						stringValue: body.data.object.metadata.name,
 					},
-					place: {
-						stringValue: body.data.object.metadata.place,
+					Sublicense: {
+						stringValue: body.data.object.metadata.Sublicense,
 					},
 					statement_descriptor: body.data.object.statement_descriptor
 						? {
@@ -34,14 +34,14 @@ export default {
 					},
 				},
 			};
-			await setDoc('payment', body.data.object.metadata.place + body.data.object.id, document);
+			await setDoc('SublicensePayment', body.data.object.metadata.Sublicense + body.data.object.id, document);
 		}
 		return new Response();
 	},
 };
 
 async function setDoc(collection, id, document) {
-	return await fetch(`https://firestore.googleapis.com/v1/projects/projectname-o/databases/(default)/documents/${collection}/${id}`, {
+	return await fetch(`https://firestore.googleapis.com/v1/projects/projectid-x/databases/(default)/documents/${collection}/${id}`, {
 		method: 'PATCH',
 		body: JSON.stringify(document),
 		headers: {

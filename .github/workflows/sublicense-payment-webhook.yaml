@@ -1,4 +1,4 @@
-name:  SublicensePayment webhook
+name:  fleet DriveStateRefresh
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.WORKERS_API_TOKEN }}
-          workingDirectory: data/Sublicense/Payment/webhook
+          workingDirectory: data/fleet/DriveStateRefresh
           secrets: |
             UPSTASH_REDIS_REST_TOKEN
             GOOGLE_MAPS_API_KEY
