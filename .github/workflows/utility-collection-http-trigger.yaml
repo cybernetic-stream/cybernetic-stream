@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-#    paths:
-#      - "data/fleet/Sourcing/**"
+    paths:
+      - "data/utility/collectionHttpTrigger/**"
 
 jobs:
   build-and-push:
