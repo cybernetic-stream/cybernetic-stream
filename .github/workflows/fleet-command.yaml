@@ -1,11 +1,11 @@
-name: Deploy fleet token refresh
+name: fleet command
 
 on:
   push:
     branches:
       - main
     paths:
-      - "data/fleet/tokenRefresh/**"
+      - "data/fleet/command/**"
 
 jobs:
   deploy:
@@ -13,14 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@main
 
-      - name: Deploy to Cloudflare
+      - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.WORKERS_API_TOKEN }}
-          workingDirectory: data/fleet/tokenRefresh
+          workingDirectory: data/fleet/command
           secrets: |
             UPSTASH_REDIS_REST_TOKEN
-            TESLA_CLIENT_SECRET
         env:
           UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
-          TESLA_CLIENT_SECRET: ${{ secrets.TESLA_CLIENT_SECRET }}

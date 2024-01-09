@@ -1,11 +1,11 @@
-name: Deploy fleet command
+name:  fleet DriveStateRefresh
 
 on:
   push:
     branches:
       - main
     paths:
-      - "data/fleet/command/**"
+      - "data/fleet/DriveStateRefresh/**"
 
 jobs:
   deploy:
@@ -13,12 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@main
 
-      - name: Deploy
+      - name: Deploy to Cloudflare
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.WORKERS_API_TOKEN }}
-          workingDirectory: data/fleet/command
+          workingDirectory: data/fleet/DriveStateRefresh
           secrets: |
             UPSTASH_REDIS_REST_TOKEN
+            GOOGLE_MAPS_API_KEY
         env:
           UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}

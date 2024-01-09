@@ -1,4 +1,4 @@
-name: Deploy query result trigger
+name: query result trigger
 
 on:
   push:

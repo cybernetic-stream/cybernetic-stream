@@ -1,4 +1,4 @@
-name: Trigger Fleet Sourcing Refresh
+name: fleet-sourcing-refresh
 
 on:
   schedule:
