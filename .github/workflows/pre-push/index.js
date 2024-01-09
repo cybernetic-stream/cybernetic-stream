@@ -31,10 +31,9 @@ on:
     branches:
       - main
 
-
 jobs:
   deploy:
-    runs-on: glendenning-barn
+    runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_SUBLICENSE: ${doc.id}
     defaults:

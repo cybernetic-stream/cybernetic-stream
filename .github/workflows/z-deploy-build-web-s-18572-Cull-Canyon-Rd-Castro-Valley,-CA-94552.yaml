@@ -4,10 +4,9 @@ on:
     branches:
       - main
 
-
 jobs:
   deploy:
-    runs-on: glendenning-barn
+    runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_SUBLICENSE: 18572 Cull Canyon Rd Castro Valley, CA 94552
     defaults:
