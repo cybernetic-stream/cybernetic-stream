@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-#    paths:
-#      - "data/fleet/Sourcing/**"
+    paths:
+      - "data/fleet/Sourcing/**"
 
 jobs:
   build-and-push:
@@ -30,11 +30,11 @@ jobs:
       - name: build and push image
         uses: docker/build-push-action@v2
         with:
-          context: ./data/utility/collectionHttpTrigger
-          file: ./data/utility/collectionHttpTrigger/Dockerfile
+          context: ./data/fleet/Sourcing
+          file: ./data/fleet/Sourcing/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: docker.io/usernamex36/utility-collection-http-trigger:${{ env.IMAGE_TAG }}
+          tags: docker.io/usernamex36/fleet-sourcing:${{ env.IMAGE_TAG }}
 
       - name: gcloud auth
         uses: google-github-actions/auth@v2.0.0
@@ -54,7 +54,7 @@ jobs:
         run: |
           gcloud run deploy fleet-sourcing \
             --execution-environment=gen2 \
-            --image docker.io/usernamex36/utility-collection-http-trigger:${{ env.IMAGE_TAG }} \
+            --image docker.io/usernamex36/fleet-sourcing:${{ env.IMAGE_TAG }} \
             --platform managed \
             --region us-west2 \
             --memory 2Gi \

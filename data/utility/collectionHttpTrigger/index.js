@@ -3,9 +3,16 @@ import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 
 const app = express();
+
+let gcpServiceAccount = process.env.GCP_SERVICE_ACCOUNT;
+if (process.env.IS_CONTAINER) {
+  let buffer = Buffer.from(gcpServiceAccount, 'base64');
+  gcpServiceAccount = buffer.toString('utf-8');
+}
 initializeApp({
-  credential: cert(JSON.parse(process.env.GCP_SERVICE_ACCOUNT)),
+  credential: cert(JSON.parse(gcpServiceAccount)),
 });
+
 const db = getFirestore();
 
 app.use(express.json());
