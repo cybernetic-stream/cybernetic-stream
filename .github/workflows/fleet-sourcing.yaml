@@ -48,7 +48,7 @@ jobs:
           gcloud auth configure-docker
 
       - name: Decode and set GCP Service Account
-        run: echo "GCP_SERVICE_ACCOUNT=$(echo '${{ secrets.BASE64_GCP_SERVICE_ACCOUNT }}' | base64 --decode)" >> $GITHUB_ENV
+        run: echo "GCP_SERVICE_ACCOUNT=$(echo '${{ secrets.BASE64_GCP_SERVICE_ACCOUNT_ESCAPED }}' | base64 --decode)" >> $GITHUB_ENV
 
       - name: deploy
         run: |
@@ -63,4 +63,5 @@ jobs:
             --cpu-boost \
             --set-env-vars ADESA_PASSWORD=${{ secrets.ADESA_PASSWORD }},R2_SECRET_ACCESS_KEY=${{ secrets.R2_SECRET_ACCESS_KEY }},GCP_SERVICE_ACCOUNT='${{ env.GCP_SERVICE_ACCOUNT }}'
 
+          
           
