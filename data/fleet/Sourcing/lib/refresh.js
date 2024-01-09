@@ -5,8 +5,18 @@ import { getFirestore, Timestamp } from "firebase-admin/firestore";
 import listingImages from "./listingImages.js";
 import listing from "./listing.js";
 
+let gcpServiceAccount = process.env.GCP_SERVICE_ACCOUNT;
+
+// Check if the application is running inside a container
+if (process.env.IS_CONTAINER) {
+  // If so, decode the base64-encoded GCP service account string
+  let buffer = Buffer.from(gcpServiceAccount, 'base64');
+  gcpServiceAccount = buffer.toString('utf-8');
+}
+
+
 initializeApp({
-  credential: cert(JSON.parse(process.env.GCP_SERVICE_ACCOUNT)),
+  credential: cert(JSON.parse(gcpServiceAccount)),
 });
 
 const db = getFirestore();
