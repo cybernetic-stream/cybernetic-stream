@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: glendenning-barn
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ui/web
