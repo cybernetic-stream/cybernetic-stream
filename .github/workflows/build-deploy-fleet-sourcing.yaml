@@ -56,4 +56,4 @@ jobs:
             --cpu 1 \
             --allow-unauthenticated \
             --cpu-boost \
-            --set-env-vars ADESA_PASSWORD='NE7*p3!hNzKcbkgfL4mB',R2_SECRET_ACCESS_KEY='b25156e5c0b5aaa0de3dbf55d2386ee5fccdf46443e6513c11796465e2948739',GCP_SERVICE_ACCOUNT_JSON="$(echo ${{ secrets.GCP_SERVICE_ACCOUNT }} | base64 --decode)"
+            --set-env-vars ADESA_PASSWORD='NE7*p3!hNzKcbkgfL4mB',R2_SECRET_ACCESS_KEY='b25156e5c0b5aaa0de3dbf55d2386ee5fccdf46443e6513c11796465e2948739',GCP_SERVICE_ACCOUNT='$( ${{ secrets.BASE64_GCP_SERVICE_ACCOUNT }} | base64 --decode)'
