@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: glendenning-barn
+    runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_SUBLICENSE: 61 Castro St San Leandro, CA 94577
     defaults:
