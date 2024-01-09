@@ -49,3 +49,4 @@ async function setDoc(collection, id, document) {
 		},
 	}).then((x) => x.json());
 }
+
