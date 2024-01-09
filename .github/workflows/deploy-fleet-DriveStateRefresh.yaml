@@ -9,7 +9,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: glendenning-barn
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
 

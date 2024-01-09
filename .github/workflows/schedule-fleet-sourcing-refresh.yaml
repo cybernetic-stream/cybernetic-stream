@@ -6,7 +6,7 @@ on:
 
 jobs:
   triggerRefresh:
-    runs-on: glendenning-barn
+    runs-on: ubuntu-latest
 
     steps:
       - name: Send Refresh Request

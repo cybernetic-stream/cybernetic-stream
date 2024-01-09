@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: glendenning-barn
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
