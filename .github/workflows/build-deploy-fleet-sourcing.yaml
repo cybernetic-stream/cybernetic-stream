@@ -1,5 +1,8 @@
 name: Build and Deploy Fleet Sourcing
 
+
+run: |
+
 on:
   push:
     branches:
@@ -38,7 +41,7 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2.0.0
         with:
-          credentials_json: ${{ steps.decode-gcp.outputs.decoded-json }}
+          credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
       - name: Set up Google Cloud
         uses: google-github-actions/setup-gcloud@v2.0.1
