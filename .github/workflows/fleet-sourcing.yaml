@@ -61,4 +61,4 @@ jobs:
             --cpu 1 \
             --allow-unauthenticated \
             --cpu-boost \
-            --set-env-vars ADESA_PASSWORD=${{ secrets.ADESA_PASSWORD }},R2_SECRET_ACCESS_KEY=${{ secrets.R2_SECRET_ACCESS_KEY }},GCP_SERVICE_ACCOUNT=${{ env.GCP_SERVICE_ACCOUNT }}
+            --set-env-vars ADESA_PASSWORD=${{ secrets.ADESA_PASSWORD }},R2_SECRET_ACCESS_KEY=${{ secrets.R2_SECRET_ACCESS_KEY }},GCP_SERVICE_ACCOUNT='${{ env.GCP_SERVICE_ACCOUNT }}'
