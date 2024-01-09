@@ -36,6 +36,12 @@ jobs:
 
       - name: Vercel Build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
+        env:
+          IS_DEPLOYMENT: true
+          BASE64_GCP_SERVICE_ACCOUNT: ${{ secrets.BASE64_GCP_SERVICE_ACCOUNT }}
 
       - name: Vercel Deploy
         run: npx vercel deploy --prebuilt --token ${{ secrets.VERCEL_TOKEN }} --prod
+        env:
+          IS_DEPLOYMENT: true
+          BASE64_GCP_SERVICE_ACCOUNT: ${{ secrets.BASE64_GCP_SERVICE_ACCOUNT }}
