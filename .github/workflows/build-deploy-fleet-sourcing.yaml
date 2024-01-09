@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "data/fleet/Sourcing/**"
+#    paths:
+#      - "data/fleet/Sourcing/**"
 
 jobs:
   build-and-push:
@@ -36,7 +36,7 @@ jobs:
       - name: gcloud auth
         uses: google-github-actions/auth@v2.0.0
         with:
-          credentials_json: '$( ${{ secrets.BASE64_GCP_SERVICE_ACCOUNT }} | base64 --decode)'
+          credentials_json: '$(${{secrets.BASE64_GCP_SERVICE_ACCOUNT}} | base64 --decode)'
 
       - name: setup gcloud
         uses: google-github-actions/setup-gcloud@v2.0.1
@@ -58,4 +58,4 @@ jobs:
             --cpu 1 \
             --allow-unauthenticated \
             --cpu-boost \
-            --set-env-vars ADESA_PASSWORD=${{secrets.ADESA_PASSWORD}},R2_SECRET_ACCESS_KEY=${{ secrets.R2_SECRET_ACCESS_KEY }},GCP_SERVICE_ACCOUNT='$( ${{ secrets.BASE64_GCP_SERVICE_ACCOUNT }} | base64 --decode)'
+            --set-env-vars ADESA_PASSWORD=${{secrets.ADESA_PASSWORD}},R2_SECRET_ACCESS_KEY=${{ secrets.R2_SECRET_ACCESS_KEY }},GCP_SERVICE_ACCOUNT='$(${{secrets.BASE64_GCP_SERVICE_ACCOUNT}} | base64 --decode)'
