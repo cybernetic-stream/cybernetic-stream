@@ -1,12 +1,14 @@
-name: Z build deploy 38 Castro St San Leandro, CA 94577
+name: z web-s 38 Castro St San Leandro, CA 94577
 on:
   push:
     branches:
       - main
+    paths:
+      - "ui/web-s/**"
 
 jobs:
   deploy:
-    runs-on: 5
+    runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_SUBLICENSE: 38 Castro St San Leandro, CA 94577
     defaults:

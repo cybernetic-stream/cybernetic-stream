@@ -1,12 +1,14 @@
-name: Z build deploy 539 Blossom Way San Leandro, CA 94577 2
+name: z web-s 539 Blossom Way San Leandro, CA 94577 2
 on:
   push:
     branches:
       - main
+    paths:
+      - "ui/web-s/**"
 
 jobs:
   deploy:
-    runs-on: 9
+    runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_SUBLICENSE: 539 Blossom Way San Leandro, CA 94577 2
     defaults:

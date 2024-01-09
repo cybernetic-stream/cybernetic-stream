@@ -25,14 +25,13 @@ async function main() {
         .replaceAll(" ", "-")
         .toLowerCase()}.yaml`;
 
-      const content = `name: Z build deploy ${doc.id}
+      const content = `name: z web-s ${doc.id}
 on:
   push:
     branches:
       - main
     paths:
       - "ui/web-s/**"
-
 
 jobs:
   deploy:

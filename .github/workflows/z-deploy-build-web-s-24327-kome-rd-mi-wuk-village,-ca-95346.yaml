@@ -1,4 +1,4 @@
-name: z web-s 61 Castro St San Leandro, CA 94577
+name: z web-s 24327 Kome Rd Mi-Wuk Village, CA 95346
 on:
   push:
     branches:
@@ -10,17 +10,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SUBLICENSE: 61 Castro St San Leandro, CA 94577
+      NEXT_PUBLIC_SUBLICENSE: 24327 Kome Rd Mi-Wuk Village, CA 95346
     defaults:
       run:
-        working-directory:  web-s-61-castro-st-san-leandro-ca-94577
+        working-directory:  web-s-24327-kome-rd-mi-wuk-village-ca-95346
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
 
       - name: Rename directory
-        run: mv ui/web-s web-s-61-castro-st-san-leandro-ca-94577
+        run: mv ui/web-s web-s-24327-kome-rd-mi-wuk-village-ca-95346
         working-directory: ${{ github.workspace }}
 
       - name: Set up Node.js
