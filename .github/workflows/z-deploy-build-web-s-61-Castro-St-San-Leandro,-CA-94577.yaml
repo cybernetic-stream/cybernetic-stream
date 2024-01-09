@@ -17,7 +17,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-
       - name: Rename directory
         run: mv ui/web-s web-s-61-castro-st-san-leandro-ca-94577
         working-directory: ${{ github.workspace }}
