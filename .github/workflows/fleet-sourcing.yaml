@@ -31,7 +31,7 @@ jobs:
           file: ./data/fleet/Sourcing/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: docker.io/usernamex36/fleet-sourcing-k:latest
+          tags: docker.io/usernamex36/fleet-sourcing:latest
 
       - name: gcloud auth
         uses: google-github-actions/auth@v2.0.0
@@ -51,7 +51,7 @@ jobs:
         run: |
           gcloud run deploy fleet-sourcing \
             --execution-environment=gen2 \
-            --image docker.io/usernamex36/fleet-sourcing-k:latest \
+            --image docker.io/usernamex36/fleet-sourcing:latest \
             --platform managed \
             --region us-west2 \
             --memory 2Gi \
