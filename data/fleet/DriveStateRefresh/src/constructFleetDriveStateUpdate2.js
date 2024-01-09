@@ -25,7 +25,7 @@ async function getAddress(lat, long, env) {
 
 	try {
 		const formatted_address = formatFormattedAddress(
-			await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${env.GOOGLE_API_KEY}`)
+			await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${env.GOOGLE_MAPS_API_KEY}`)
 				.then((x) => x.json())
 				.then((x) => x.results[0].formatted_address),
 		);
