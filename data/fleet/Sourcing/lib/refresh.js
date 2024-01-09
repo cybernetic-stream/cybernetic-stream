@@ -18,6 +18,8 @@ const db = getFirestore();
 
 export default async function refresh(query) {
   const res = await parse(await searchResults(query));
+  console.log('res')
+  console.log(res)
 
   for (const unit of res) {
     const images = await listingImages(await listing(unit.source_id));
@@ -50,7 +52,7 @@ export default async function refresh(query) {
     .get();
 
   active_query_matches.forEach(async (doc) => {
-    if (found_vins.includes(doc.data().vin)) {
+    if (!found_vins.includes(doc.data().vin)) {
       await db
         .collection("FleetSourcing")
         .doc(doc.id)
