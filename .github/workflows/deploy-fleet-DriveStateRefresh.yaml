@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "data/fleet/DriveStateRefresh/**"
+#    paths:
+#      - "data/fleet/DriveStateRefresh/**"
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: glendenning-barn
     steps:
       - uses: actions/checkout@main
 
