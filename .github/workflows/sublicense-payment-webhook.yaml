@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-#    paths:
-#      - "data/fleet/DriveStateRefresh/**"
+    paths:
+      - "data/Sublicense/Payment/webhook/**"
 
 jobs:
   deploy:
