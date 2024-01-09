@@ -30,7 +30,6 @@ export default function Index({ sublicenseInitialData, query }) {
 
   useEffect(() => {
     console.log(queryResponseBing);
-    alert('...')
   }, [queryResponseBing]);
 
   const queryResponseYoutube = useListener({
@@ -56,7 +55,7 @@ export default function Index({ sublicenseInitialData, query }) {
 
   const fleetSourcingIntent = useListener({
     collection: "FleetSourcing",
-    where: [["status", "==", "active"]],
+    where: [["status", "==", "active"], ['interior_color', '!=', 'white']],
     orderBy: [["date", "asc"]],
   });
 

@@ -1,14 +1,17 @@
-console.log('hi');
+const config = {"lat":47.040142,"lng":-122.9301053,"unit":"A5","latitudeDeltaDefault":0.00046658752874999997,"longitudeDeltaDefault":0.00028201219624999997,"latitudeDeltaNarrow":0.000516104675,"longitudeDeltaNarrow":0.00111860435,"latitudeDeltaShort":0.0009331770000000001,"longitudeDeltaShort":0.0005640280000000001,"latitudeOffsetShort":-0.00007400000000000001,"longitudeOffsetWide":0.000043937500000000004,"latitudeOffsetNarrow":-0.143375};
+
 if (window.devicePixelRatio < 1.5) {
   window.devicePixelRatio = 1.5;
 }
+
+console.log('21 savage');
 let scripts = document.getElementsByTagName('script');
 let currentScript = scripts[scripts.length - 1];
 currentScript.src = 'https://cdn.apple-mapkit.com/mk/5.x.x/mapkit.core.js';
 currentScript.setAttribute('data-callback', 'initMap');
 currentScript.setAttribute('data-libraries', 'map,annotations');
 currentScript.setAttribute(
-  'data-initial-Token',
+  'data-initial-token',
   'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjRXNjgzUDVHUkoifQ.eyJpc3MiOiJLN0E2VEhHWkQzIiwiaWF0IjoxNjg5MjA0ODg3LCJleHAiOjE3MjA3NDA4ODd9.RsfJ37xSpbRhnc_3gciS94dHNjvgZoF-W37nFgsAwDxVhp6zo6gyR_vXCa6qW55o-P9ZDoexVY81JhmgVBoDFw'
 );
 currentScript.setAttribute(
@@ -17,8 +20,10 @@ currentScript.setAttribute(
 );
 
 window.initMap = () => {
-  const annotation = new mapkit.MarkerAnnotation(
-    new mapkit.Coordinate(config.coordinates[0], config.coordinates[1]),
+  const narrowViewport = window.innerWidth <= 640;
+  const shortViewport = window.innerHeight <= 430;
+  let annotation = new mapkit.MarkerAnnotation(
+    new mapkit.Coordinate(config.lat, config.lng),
     {
       color: '#969696',
       selected: 'true',
@@ -35,19 +40,16 @@ window.initMap = () => {
   );
 
   function getMapSettings() {
-    const narrowViewport = window.innerWidth <= 640;
-    const shortViewport = window.innerHeight <= 430;
-
     return {
       region: new mapkit.CoordinateRegion(
         new mapkit.Coordinate(
-          config.coordinates[0] +
+          config.lat +
             (narrowViewport
               ? config.latitudeOffsetNarrow
               : shortViewport
                 ? config.latitudeOffsetShort * window.innerHeight
                 : config.latitudeOffsetShort * window.innerHeight),
-          config.coordinates[1] +
+          config.lng +
             (narrowViewport
               ? 0
               : config.longitudeOffsetWide * window.innerWidth)
@@ -66,14 +68,12 @@ window.initMap = () => {
               : config.longitudeDeltaDefault * window.innerWidth
         )
       ),
-      mapType:
-        narrowViewport || shortViewport
-          ? mapkit.Map.MapTypes.Hybrid
-          : mapkit.Map.MapTypes.Hybrid,
+      mapType: mapkit.Map.MapTypes.Hybrid,
     };
   }
 
   const { region, mapType } = getMapSettings();
+
   let map = new mapkit.Map('map-container', {
     region,
     mapType,
@@ -83,7 +83,6 @@ window.initMap = () => {
     showsCompass: mapkit.FeatureVisibility.Hidden,
     showsZoomControl: false,
   });
-
   window.addEventListener('resize', () => {
     setTimeout(() => {
       const { region, mapType } = getMapSettings();
@@ -153,7 +152,7 @@ window.initMap = () => {
             NetworkError: 'Network Error',
             Unknown: 'Unknown',
           },
-          x = 'Bearer {{Token}}',
+          x = 'Bearer {{token}}',
           S = { Apple: 'Apple', AutoNavi: 'AutoNavi' };
         function I() {
           (this._jwtTokensToCheck = []), (this.componentVersions = {});
@@ -544,7 +543,7 @@ window.initMap = () => {
               else if (i === _.UNAUTHORIZED) {
                 (r = k.Unauthorized),
                   (t =
-                    'Initialization failed because the authorization Token is invalid.');
+                    'Initialization failed because the authorization token is invalid.');
                 try {
                   var n = JSON.parse(e.responseText);
                   n.error &&
@@ -1969,7 +1968,7 @@ window.initMap = () => {
                   setTimeout(function () {
                     i.authorizationCallback === c.authorizationCallback &&
                       console.warn(
-                        '[MapKit] MapKit was initialized with a static authorization Token. authorizationCallback is needed to FleetDriveStateRefresh authorization later.'
+                        '[MapKit] MapKit was initialized with a static authorization token. authorizationCallback is needed to FleetDriveStateRefresh authorization later.'
                       );
                   }, 5e3);
               };
