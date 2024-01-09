@@ -9,6 +9,7 @@ export default async function parse(url) {
 async function searchResults(url) {
   const returnArray = [];
 
+
   for (const unit of (
     await JSDOM.fromURL(url)
   ).window.document.querySelectorAll(".vehicle-wrapper.row")) {
@@ -56,7 +57,8 @@ async function searchResults(url) {
         ? interiorElement.textContent.trim().toLowerCase()
         : "",
 
-      date: new Date(dateData[0].textContent + " " + dateData[1].textContent),
+
+      date: new Date(dateData.length == 1 ? dateData[0].textContent : dateData[0].textContent + " " + dateData[1].textContent),
     });
   }
 
