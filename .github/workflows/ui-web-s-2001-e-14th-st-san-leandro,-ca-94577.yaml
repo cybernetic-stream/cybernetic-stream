@@ -1,4 +1,4 @@
-name: z web-s 10144 Boca Entrada Blvd APT 116 Boca Raton, FL 33428
+name: ui-web-s 2001 E 14th St San Leandro, CA 94577
 on:
   push:
     branches:
@@ -10,17 +10,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SUBLICENSE: 10144 Boca Entrada Blvd APT 116 Boca Raton, FL 33428
+      NEXT_PUBLIC_SUBLICENSE: 2001 E 14th St San Leandro, CA 94577
     defaults:
       run:
-        working-directory:  web-s-10144-boca-entrada-blvd-apt-116-boca-raton-fl-33428
+        working-directory:  web-s-2001-e-14th-st-san-leandro-ca-94577
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
 
       - name: Rename directory
-        run: mv ui/web-s web-s-10144-boca-entrada-blvd-apt-116-boca-raton-fl-33428
+        run: mv ui/web-s web-s-2001-e-14th-st-san-leandro-ca-94577
         working-directory: ${{ github.workspace }}
 
       - name: Set up Node.js

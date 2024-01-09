@@ -1,4 +1,4 @@
-name: z web-s 18572 Cull Canyon Rd Castro Valley, CA 94552
+name: ui-web-s 10144 Boca Entrada Blvd APT 116 Boca Raton, FL 33428
 on:
   push:
     branches:
@@ -10,17 +10,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SUBLICENSE: 18572 Cull Canyon Rd Castro Valley, CA 94552
+      NEXT_PUBLIC_SUBLICENSE: 10144 Boca Entrada Blvd APT 116 Boca Raton, FL 33428
     defaults:
       run:
-        working-directory:  web-s-18572-cull-canyon-rd-castro-valley-ca-94552
+        working-directory:  web-s-10144-boca-entrada-blvd-apt-116-boca-raton-fl-33428
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
 
       - name: Rename directory
-        run: mv ui/web-s web-s-18572-cull-canyon-rd-castro-valley-ca-94552
+        run: mv ui/web-s web-s-10144-boca-entrada-blvd-apt-116-boca-raton-fl-33428
         working-directory: ${{ github.workspace }}
 
       - name: Set up Node.js

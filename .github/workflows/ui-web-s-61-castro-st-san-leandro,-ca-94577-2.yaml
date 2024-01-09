@@ -1,4 +1,4 @@
-name: z web-s 539 Blossom Way San Leandro, CA 94577 2
+name: ui-web-s 61 Castro St San Leandro, CA 94577 2
 on:
   push:
     branches:
@@ -10,17 +10,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SUBLICENSE: 539 Blossom Way San Leandro, CA 94577 2
+      NEXT_PUBLIC_SUBLICENSE: 61 Castro St San Leandro, CA 94577 2
     defaults:
       run:
-        working-directory:  web-s-539-blossom-way-san-leandro-ca-94577-2
+        working-directory:  web-s-61-castro-st-san-leandro-ca-94577-2
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
 
       - name: Rename directory
-        run: mv ui/web-s web-s-539-blossom-way-san-leandro-ca-94577-2
+        run: mv ui/web-s web-s-61-castro-st-san-leandro-ca-94577-2
         working-directory: ${{ github.workspace }}
 
       - name: Set up Node.js

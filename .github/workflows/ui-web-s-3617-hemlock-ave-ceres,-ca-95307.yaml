@@ -1,4 +1,4 @@
-name: z web-s 2307 90th Ave Oakland, CA 94603
+name: ui-web-s 3617 Hemlock Ave Ceres, CA 95307
 on:
   push:
     branches:
@@ -10,17 +10,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SUBLICENSE: 2307 90th Ave Oakland, CA 94603
+      NEXT_PUBLIC_SUBLICENSE: 3617 Hemlock Ave Ceres, CA 95307
     defaults:
       run:
-        working-directory:  web-s-2307-90th-ave-oakland-ca-94603
+        working-directory:  web-s-3617-hemlock-ave-ceres-ca-95307
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
 
       - name: Rename directory
-        run: mv ui/web-s web-s-2307-90th-ave-oakland-ca-94603
+        run: mv ui/web-s web-s-3617-hemlock-ave-ceres-ca-95307
         working-directory: ${{ github.workspace }}
 
       - name: Set up Node.js

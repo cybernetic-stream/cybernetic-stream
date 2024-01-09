@@ -21,11 +21,11 @@ async function main() {
   const writes = await Promise.all(
     querySnapshot.docs.map(async (doc) => {
       const sublicense = doc.data();
-      const filename = `../z-deploy-build-web-s-${doc.id
+      const filename = `../ui-web-s-${doc.id
         .replaceAll(" ", "-")
         .toLowerCase()}.yaml`;
 
-      const content = `name: z web-s ${doc.id}
+      const content = `name: ui-web-s ${doc.id}
 on:
   push:
     branches:
@@ -86,7 +86,7 @@ jobs:
 async function deleteZPrefixedFiles(directory = "../") {
   try {
     const files = await fsPromises.readdir(directory);
-    const zPrefixedFiles = files.filter((file) => file.startsWith("z-"));
+    const zPrefixedFiles = files.filter((file) => file.startsWith("ui-web-s"));
 
     for (const file of zPrefixedFiles) {
       await fsPromises.unlink(join(directory, file));

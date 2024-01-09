@@ -1,4 +1,4 @@
-name: z web-s 817 Rodney Dr San Leandro, CA 94577
+name: ui-web-s 2309 90th Ave Oakland, CA 94603
 on:
   push:
     branches:
@@ -10,17 +10,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SUBLICENSE: 817 Rodney Dr San Leandro, CA 94577
+      NEXT_PUBLIC_SUBLICENSE: 2309 90th Ave Oakland, CA 94603
     defaults:
       run:
-        working-directory:  web-s-817-rodney-dr-san-leandro-ca-94577
+        working-directory:  web-s-2309-90th-ave-oakland-ca-94603
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
 
       - name: Rename directory
-        run: mv ui/web-s web-s-817-rodney-dr-san-leandro-ca-94577
+        run: mv ui/web-s web-s-2309-90th-ave-oakland-ca-94603
         working-directory: ${{ github.workspace }}
 
       - name: Set up Node.js
