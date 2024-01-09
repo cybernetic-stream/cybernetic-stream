@@ -1,4 +1,4 @@
-name: deploy web
+name: build deploy web
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
       - "ui/web/**"
 
 jobs:
-  deploy:
+  build-deploy:
     runs-on: glendenning-barn
     defaults:
       run:
@@ -26,11 +26,11 @@ jobs:
       - name: npm i
         run: npm install
 
-      - name: vercel pull
+      - name: pull
         run: vercel pull --yes --scope teamname-x --environment=production --token ${{ secrets.VERCEL_TOKEN }}
 
-      - name: vercel build
+      - name: build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
 
-      - name: vercel deploy
+      - name: deploy
         run: npx vercel deploy --prebuilt --token ${{ secrets.VERCEL_TOKEN }} --prod
