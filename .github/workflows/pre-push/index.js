@@ -30,6 +30,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "ui/web-s/**"
+
 
 jobs:
   deploy:
