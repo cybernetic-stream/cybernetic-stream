@@ -1,4 +1,4 @@
-name: build deploy web
+name: ui web
 
 on:
   push:
@@ -31,6 +31,12 @@ jobs:
 
       - name: build
         run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
+        env:
+          BASE64_GCP_SERVICE_ACCOUNT: ${{ secrets.BASE64_GCP_SERVICE_ACCOUNT }}
+          IS_DEPLOYMENT: true
 
       - name: deploy
         run: npx vercel deploy --prebuilt --token ${{ secrets.VERCEL_TOKEN }} --prod
+        env:
+          BASE64_GCP_SERVICE_ACCOUNT: ${{ secrets.BASE64_GCP_SERVICE_ACCOUNT }}
+          IS_DEPLOYMENT: true
