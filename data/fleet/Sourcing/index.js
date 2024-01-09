@@ -43,10 +43,6 @@ app.post("/refresh", async (req, res) => {
   res.send();
 });
 
-app.get('/demo', async (req, res) => {
-  res.json(3838)
-})
-
 app.listen(process.env.PORT, () => {
   console.log(process.env.PORT);
 });
