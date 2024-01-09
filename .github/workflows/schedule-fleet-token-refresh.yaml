@@ -6,7 +6,7 @@ on:
 
 jobs:
   makeWebRequest:
-    runs-on: ubuntu-latest
+    runs-on: glendenning-barn
 
     steps:
       - name: fleet token refresh
