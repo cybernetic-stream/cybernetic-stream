@@ -30,12 +30,11 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'ui/web-s/**'
+
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: glendenning-barn
     env:
       NEXT_PUBLIC_SUBLICENSE: ${doc.id}
     defaults:
@@ -66,11 +65,6 @@ jobs:
 
       - name: Vercel Project Settings
         run: vercel pull --yes --scope teamname-x --environment=production --token \${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: \${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: \${{ secrets.VERCEL_PROJECT_ID }}
-          NEXT_PUBLIC_SUBLICENSE: ${doc.id}
-
 
       - name: Vercel Build
         run: npx vercel build --prod --token \${{ secrets.VERCEL_TOKEN }}
