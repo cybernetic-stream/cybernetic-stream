@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: 4
     env:
       NEXT_PUBLIC_SUBLICENSE: 38 Castro St San Leandro, CA 94577 2
     defaults:

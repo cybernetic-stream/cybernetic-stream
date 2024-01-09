@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: 10
     env:
       NEXT_PUBLIC_SUBLICENSE: 539 Blossom Way San Leandro, CA 94577
     defaults:
