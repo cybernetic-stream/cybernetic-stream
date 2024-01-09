@@ -1,4 +1,4 @@
-name: Build and Deploy Fleet Sourcing
+name: Build and Deploy Fleet Sourcingd
 
 on:
   push:
