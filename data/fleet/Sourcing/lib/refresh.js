@@ -28,9 +28,8 @@ export default async function refresh(query) {
   for (const unit of res) {
     const images = await listingImages(await listing(unit.source_id));
 
-    if (unit.interior_color !== 'white'){
+    if (unit.interior_color === 'white'){
       continue;
-
     }
 
     await db
