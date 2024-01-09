@@ -14,6 +14,7 @@ if (process.env.IS_CONTAINER) {
   gcpServiceAccount = buffer.toString('utf-8');
 }
 
+console.log(process.env.IS_CONTAINER)
 
 initializeApp({
   credential: cert(JSON.parse(gcpServiceAccount)),
