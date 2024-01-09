@@ -30,7 +30,7 @@ app.post("/listing", async (req, res) => {
 });
 
 app.post("/listing-images", async (req, res) => {
-  //https://fleet-sourcing.cyberneticstream.com/adesa/listing/921704627/1704644244890.html
+  // https://fleet-sourcing.cyberneticstream.com/adesa/listing/921704627/1704644244890.html
   const { url } = req.body;
   const data = await listingImages(url);
   res.send(data);
