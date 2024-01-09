@@ -1,20 +1,20 @@
 name: Build and Deploy Fleet Sourcing
 
-run: |
-
 on:
   push:
     branches:
       - main
-#    paths:
-#      - "data/fleet/Sourcing/**"
 
 jobs:
   build-and-push:
     runs-on: glendenning-barn
     steps:
-- name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Print Escaped GCP Service Account
+        run: |
+          echo "Escaped GCP Service Account: ${{ secrets.GCP_SERVICE_ACCOUNT }}"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -36,9 +36,11 @@ jobs:
           tags: docker.io/usernamex36/fleet-sourcing:latest
 
       - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2.0.0
-        with:
-          credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+        run: |
+          SERVICE_ACCOUNT_JSON=$(echo "${{ secrets.GCP_SERVICE_ACCOUNT }}" | sed 's/\\\"/\"/g')
+          echo "$SERVICE_ACCOUNT_JSON" > gcp_service_account.json
+          gcloud auth activate-service-account --key-file=gcp_service_account.json
+          rm gcp_service_account.json
 
       - name: Set up Google Cloud
         uses: google-github-actions/setup-gcloud@v2.0.1
@@ -51,7 +53,8 @@ jobs:
 
       - name: Deploy to Cloud Run
         run: |
-          # Deploy to Cloud Run with environment variables
+          SERVICE_ACCOUNT_JSON=$(echo "${{ secrets.GCP_SERVICE_ACCOUNT }}" | sed 's/\\\"/\"/g')
+          echo "$SERVICE_ACCOUNT_JSON" > gcp_service_account.json
           gcloud run deploy fleet-sourcing \
             --execution-environment=gen2 \
             --image docker.io/usernamex36/fleet-sourcing:latest \
@@ -61,4 +64,5 @@ jobs:
             --cpu 1 \
             --allow-unauthenticated \
             --cpu-boost \
-            --set-env-vars [ADESA_PASSWORD='NE7*p3!hNzKcbkgfL4mB',R2_SECRET_ACCESS_KEY='b25156e5c0b5aaa0de3dbf55d2386ee5fccdf46443e6513c11796465e2948739', GCP_SERVICE_ACCOUNT=${{ secrets.GCP_SERVICE_ACCOUNT }}]
+            --set-env-vars ADESA_PASSWORD='NE7*p3!hNzKcbkgfL4mB',R2_SECRET_ACCESS_KEY='b25156e5c0b5aaa0de3dbf55d2386ee5fccdf46443e6513c11796465e2948739'
+          rm gcp_service_account.json
