@@ -1,9 +1,11 @@
-name: Deploy to Vercel
+name: deploy web
 
 on:
   push:
     branches:
       - main
+    paths:
+      - "ui/web/**"
 
 jobs:
   deploy:
@@ -13,25 +15,22 @@ jobs:
         working-directory: ui/web
 
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: nvm use 21
         uses: actions/setup-node@v2
         with:
           node-version: "21"
 
-      - name: Install dependencies
+      - name: npm i
         run: npm install
 
-      - name: Vercel Project Settings
-        run: vercel pull --yes --scope teamname-x --environment=production --token 9pn9KTktQJIhMKlpIrGsc8jP
-#        env:
-#          VERCEL_ORG_ID: team_APNcR292HbqUMJaZj8c0zvXx
-#          VERCEL_PROJECT_ID: web
+      - name: vercel pull
+        run: vercel pull --yes --scope teamname-x --environment=production --token ${{ secrets.VERCEL_TOKEN }}
 
-      - name: Vercel Build
-        run: npx vercel build --prod --token 9pn9KTktQJIhMKlpIrGsc8jP
+      - name: vercel build
+        run: npx vercel build --prod --token ${{ secrets.VERCEL_TOKEN }}
 
-      - name: Vercel Deploy
-        run: npx vercel deploy --prebuilt --token 9pn9KTktQJIhMKlpIrGsc8jP --prod
+      - name: vercel deploy
+        run: npx vercel deploy --prebuilt --token ${{ secrets.VERCEL_TOKEN }} --prod

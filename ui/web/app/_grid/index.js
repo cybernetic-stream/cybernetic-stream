@@ -30,7 +30,7 @@ export default function Index({ sublicenseInitialData, query }) {
 
   useEffect(() => {
     console.log(queryResponseBing);
-    console.log('casting a spell ...')
+    alert('elephant in the room')
   }, [queryResponseBing]);
 
   const queryResponseYoutube = useListener({
