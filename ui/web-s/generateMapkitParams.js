@@ -17,8 +17,7 @@ async function main() {
       id: process.env.NEXT_PUBLIC_SUBLICENSE,
     };
 
-    const scalar =
-      placeData.id === '2300 9th Ave SW UNIT A5 Olympia, WA 98502' ? 0.925 : 1;
+    const scalar = 1;
 
     const config = {
       lat: placeData.coordinates[0],

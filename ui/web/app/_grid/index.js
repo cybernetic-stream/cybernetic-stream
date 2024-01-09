@@ -55,8 +55,8 @@ export default function Index({ sublicenseInitialData, query }) {
 
   const fleetSourcingIntent = useListener({
   collection: "FleetSourcing",
-  where: [["status", "==", "active"], ['interior_color', '!=', 'white']],
-  orderBy: [["interior_color", "asc"], ["date", "asc"]],
+  where: [["status", "==", "active"]],
+    orderBy: [["interior_color", "asc"]],
 });
   
 
