@@ -12,6 +12,7 @@ const SFMonoRegular = localFont({
   variable: '--SFMono-Regular',
   display: 'swap',
 });
+
 export const metadata = {
   title: process.env.NEXT_PUBLIC_SUBLICENSE,
   robots: {

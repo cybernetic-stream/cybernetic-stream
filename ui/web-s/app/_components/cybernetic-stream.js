@@ -93,16 +93,13 @@ export default function CyberneticStream({ initialRows }) {
     >
       <ThemeProvider theme={DataGridTheme}>
         <Box
-          sx={{
-            maxHeight: 'calc(100% - 2rem)',
-          }}
           className={'h-3/5 sm:h-1/2'}
         >
           <DataGridPremium
             disableRowSelectionOnClick
             disableColumnMenu
             hideFooter
-            className=''
+            className='max-h-[11.3rem]'
             density='compact'
             sx={{
               marginTop: '-1rem',
